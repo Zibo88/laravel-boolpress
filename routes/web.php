@@ -13,10 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-
+// regole per la parte admin Admin
+Route::middleware('auth')
+->prefix('admin')
+->namespace('Admnin')
+// nel name c'è il punto finale
+->name('admin.')
+->group(function(){
+    Route::get('/', 'HomeController@index')->name('home');
+});
