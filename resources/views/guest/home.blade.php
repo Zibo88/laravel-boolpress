@@ -10,5 +10,8 @@
     <div id="root">
         <h1>home page pubblica che verrà stampata con vuejs</h1>
     </div>
+
+    {{-- collego lo script --}}
+    <script src="{{asset('js/app.js')}}" ></script>
 </body>
 </html>
