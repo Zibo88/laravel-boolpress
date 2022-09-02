@@ -30,4 +30,7 @@ import App from './views/App.vue'
 ;
 const app = new Vue({
     el: '#root',
+
+    // avvia come primo componente vue 
+    render: h=> h(App)
 });
