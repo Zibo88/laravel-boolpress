@@ -29,7 +29,7 @@ Route::middleware('auth')
     Route::get('/', 'HomeController@index')->name('home');
 });
 
-// route per la home della pagina publica
-Route::get('/' , function(){
+// route per la home della pagina publica, ogni url inserito porterà alla pagina guest.home se l'utente non è registrato quindi Admin
+Route::get('{any?}' , function(){
     return view('guest.home');
 });
