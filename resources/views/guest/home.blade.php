@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="root">
-        
+        <h1>home page pubblica che verrà stampata con vuejs</h1>
     </div>
 </body>
 </html>

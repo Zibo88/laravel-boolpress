@@ -28,3 +28,8 @@ Route::middleware('auth')
 ->group(function(){
     Route::get('/', 'HomeController@index')->name('home');
 });
+
+// route per la home della pagina publica
+Route::get('/' , function(){
+    return view('guest.home');
+});
