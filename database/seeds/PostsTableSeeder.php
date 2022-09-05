@@ -22,10 +22,11 @@ class PostsTableSeeder extends Seeder
             // creo una nuova riga
             $new_post = new Post();
             // popolo le righe
+            // ucfirst crea la prima parola maiuscola
             $new_post->title = ucfirst($faker->words(rand(2, 7), true)); 
             $new_post->content = $faker->paragraphs(rand(2, 5) , true);
-            // ucfirst crea la prima parola maiuscola
-            $new_post->slug = Str::slug($new_post -> title, '-');
+            // utilizzo la classe str per creare un url friendly
+            $new_post->slug = Str::slug($new_post->title, '-');
             // salvo le modifiche
             $new_post->save();
 

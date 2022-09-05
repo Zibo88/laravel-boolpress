@@ -6,6 +6,7 @@
     {{-- stampo i dati relativi alla creazione e modifica del post --}}
     <div> Creato il:{{$post->created_at}}</div>
     <div> Aggiornato il:{{$post->updated_at}}</div>
+    <div>Slug: {{$post->slug}}</div>
     <p>{{$post->content}}</p>
 
 @endsection
