@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+// importo il MOdel per poter utilizzare il database
+use App\Post;
+
 class PostController extends Controller
 {
     /**
@@ -13,8 +16,16 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('admin.posts.index ');
+    {   
+        // richiamo il Model e gli chiedo tutto il database
+        $posts = Post::all();
+        // controllo 
+        // dd($posts)
+        // invio i dati alla view admin.posts.index
+        $data = [
+            'posts' => $posts
+        ];
+        return view('admin.posts.index', $data);
     }
 
     /**
