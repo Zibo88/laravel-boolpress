@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 // importo il MOdel per poter utilizzare il database
 use App\Post;
 
+// importo la class Str per lo slug
+use Illuminate\Support\Str;
+
 class PostController extends Controller
 {
     /**
@@ -53,6 +56,18 @@ class PostController extends Controller
 
         // creo nuova riga richiamando il model
         $new_post = new Post();
+
+        // assegno i valori del form al fillable del model (in questo caso inseriamo titolo e contenuto)
+        $new_post->fill($form_data);
+        // dd($new_post);
+
+        // per i dati che invece vogliamo aggiungere a mano
+        // lo slug necessita della classe Str per essere formattato nel modo corretto
+        $new_post->slug = Str::slug($new_post->title , '-');
+
+        // salviamo il post
+        $new_post->save();
+
 
         
         
