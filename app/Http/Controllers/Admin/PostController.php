@@ -47,9 +47,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
+        // leggo i dati provenienti dal form
         $form_data = $request->all();
-        dd($form_data);
+        // dd($form_data);
+
+        // creo nuova riga richiamando il model
+        $new_post = new Post();
+
         
         
     }
