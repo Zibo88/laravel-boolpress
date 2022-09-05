@@ -63,7 +63,10 @@ class PostController extends Controller
 
         // per i dati che invece vogliamo aggiungere a mano
         // lo slug necessita della classe Str per essere formattato nel modo corretto
-        $new_post->slug = Str::slug($new_post->title , '-');
+        //modifico lo slug così da averne uno potenzialmente salvabile
+        // $new_post->slug = Str::slug($new_post->title , '-');
+        $slug_to_save = Str::slug($new_post->title , '-');
+
 
         // salviamo il post
         $new_post->save();
