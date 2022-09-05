@@ -34,8 +34,9 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+        // richiamo la view create per la visualizzazione del form
+        return view('admin.posts.create');
     }
 
     /**
