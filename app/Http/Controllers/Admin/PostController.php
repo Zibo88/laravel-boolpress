@@ -57,7 +57,12 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        // richiamo il model ed eseguo la ricerca per id
+        $post = Post::find($id);
+
+        // eseguo il return per mostrare il singolo prodotto
+        return view ('admin.posts.show');
+
     }
 
     /**
