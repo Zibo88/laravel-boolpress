@@ -60,8 +60,13 @@ class PostController extends Controller
         // richiamo il model ed eseguo la ricerca per id
         $post = Post::find($id);
 
+        // passo i dati alla show
+        $data =[
+            'post' => $post
+        ];
+
         // eseguo il return per mostrare il singolo prodotto
-        return view ('admin.posts.show');
+        return view ('admin.posts.show', $data);
 
     }
 
