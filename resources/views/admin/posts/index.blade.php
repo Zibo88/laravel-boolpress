@@ -1,1 +1,5 @@
-<h1>ciao index</h1>
+@extends('layouts.dashboard')
+
+@section('content')
+    <h1>Ciao sono index</h1>
+@endsection
