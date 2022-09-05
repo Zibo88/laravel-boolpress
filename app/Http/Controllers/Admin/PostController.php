@@ -67,6 +67,12 @@ class PostController extends Controller
         // $new_post->slug = Str::slug($new_post->title , '-');
         $slug_to_save = Str::slug($new_post->title , '-');
 
+        // creo una variabile per verificare la presenza dello slug
+        $existing_slug = Post::where('slug', '=', $slug_to_save )->first();
+        // se trova un post torna l'elemento altrimenti torna null
+        // dd($existing_slug);
+
+
 
         // salviamo il post
         $new_post->save();
