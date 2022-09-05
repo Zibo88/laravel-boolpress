@@ -86,9 +86,9 @@ class PostController extends Controller
             // incremento
             $counter++;
         };
-
+        // eseguo assegnazione dello slug a mano e non con il fillable
+        $new_post->slug = $slug_to_save;
         
-
         // salviamo il post
         $new_post->save();
 
