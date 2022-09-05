@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
+// importo la libreria faker
+use Faker\Generator as faker;
+// importo il model
+use App\Post;
+ 
 
 class PostsTableSeeder extends Seeder
 {
@@ -9,8 +14,8 @@ class PostsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Fakers $fakers)
     {
-        //
+        
     }
 }
