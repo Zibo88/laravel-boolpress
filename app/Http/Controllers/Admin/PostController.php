@@ -69,7 +69,8 @@ class PostController extends Controller
         $new_post->save();
 
 
-        
+        // reindirizzo l'utente verso il post appena creato avvelendomi dell'id
+        return redirect()->route('admin.posts.show', ['post' => $new_post->id]);
         
     }
 
