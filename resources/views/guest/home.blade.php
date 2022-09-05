@@ -9,7 +9,12 @@
 </head>
 <body>
     <div id="root">
-        <h1>home page pubblica che verrà stampata con vuejs</h1>
+        <div>
+            {{-- collegamento temporaneo --}}
+            <a href="/admin">collegamento temporaneo ad Admin</a>
+            <h1>home page pubblica che verrà stampata con vuejs</h1>
+        </div>
+        
     </div>
 
     {{-- collego lo script --}}
