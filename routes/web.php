@@ -27,6 +27,8 @@ Route::middleware('auth')
 ->name('admin.')
 ->group(function(){
     Route::get('/', 'HomeController@index')->name('home');
+    //l'url base della crud che richiama il suo controller
+    Route::resource('posts', 'PostController');
 });
 
 // route per la home della pagina publica, ogni url inserito porterà alla pagina guest.home se l'utente non è registrato quindi non è Admin
