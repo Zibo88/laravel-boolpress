@@ -2,9 +2,11 @@
 
 use Illuminate\Database\Seeder;
 // importo la libreria faker
-use Faker\Generator as faker;
+use Faker\Generator as Faker;
 // importo il model
 use App\Post;
+// importo la classe Str
+use Illuminate\Support\Str;
  
 
 class PostsTableSeeder extends Seeder
@@ -14,8 +16,19 @@ class PostsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Fakers $fakers)
+    public function run(Faker $faker)
     {
-        
+        for($i = 1; $i < 10; $i++){
+            // creo una nuova riga
+            $new_post = new Post();
+            // popolo le righe
+            $new_post->title = ucfirst($faker->words(rand(2, 7), true)); 
+            $new_post->content = $faker->paragraphs(rand(2, 5) , true);
+            // ucfirst crea la prima parola maiuscola
+            $new_post->slug = Str::slug($new_post -> title, '-');
+            // salvo le modifiche
+            $new_post->save();
+
+        }
     }
 }
