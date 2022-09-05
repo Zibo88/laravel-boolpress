@@ -67,12 +67,27 @@ class PostController extends Controller
         // $new_post->slug = Str::slug($new_post->title , '-');
         $slug_to_save = Str::slug($new_post->title , '-');
 
-        // creo una variabile per verificare la presenza dello slug
+        // creo uno slug base prima di avviare il ciclo while così da non avere il counter
+        $slug_base = $slug_to_save;
+
+        // verifico la presenza dello slug
         $existing_slug = Post::where('slug', '=', $slug_to_save )->first();
         // se trova un post torna l'elemento altrimenti torna null
         // dd($existing_slug);
 
+        // creo il ciclo while per leggere gli slug esistenti, il ciclo andrà avanti finchè $existing_slug non sarà null
+        $counter = 1;
+        while($existing_slug){
+            // creiamo un nuovo slug
+            $slug_to_save = $slug_base . '-' . $counter;
+            // verifico la presenza dello slug
+            $existing_slug = Post::where('slug', '=', $slug_to_save )->first();
 
+            // incremento
+            $counter++;
+        };
+
+        
 
         // salviamo il post
         $new_post->save();
