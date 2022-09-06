@@ -89,7 +89,7 @@ class PostController extends Controller
     public function show($id)
     {
         // richiamo il model ed eseguo la ricerca per id
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
 
         // passo i dati alla show
         $data =[
@@ -108,8 +108,9 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        // mostra la pagina della view di riferimento
+        return view('admin.posts.edit ');
     }
 
     /**
@@ -154,7 +155,7 @@ class PostController extends Controller
         // creo il ciclo while per leggere gli slug esistenti, il ciclo andrà avanti finchè $existing_slug non sarà null
         $counter = 1;
         while($existing_slug){
-            // creiamo un nuovo slug
+            // creiamo un nuovo slug appendendo allo slug base il numero dato dal counter
             $slug_to_save = $slug_base . '-' . $counter;
             // verifico la presenza dello slug
             $existing_slug = Post::where('slug', '=', $slug_to_save )->first();
@@ -162,9 +163,11 @@ class PostController extends Controller
             $counter++;
         };
 
+        // il return sarà lo slug potenialmente salvabile
         return $slug_to_save;
     }
 
+    // funzione per la validazione
     protected function getValidation(){
         return[
 		    'title' => 'required | max:255',
