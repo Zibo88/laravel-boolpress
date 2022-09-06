@@ -4,8 +4,8 @@
 {{-- stampo in pagina i dati provenienti da Postcontroller show() --}}
     <h1>Titolo: {{ $post->title }} </h1>
     {{-- stampo i dati relativi alla creazione e modifica del post --}}
-    <div> Creato il:{{$post->created_at}}</div>
-    <div> Aggiornato il:{{$post->updated_at}}</div>
+    <div> Creato il: {{$post->created_at->format('d - F - Y')}}</div>
+    <div> Aggiornato il: {{$post->updated_at->format('d - F - Y')}}</div>
     <div>Slug: {{$post->slug}}</div>
     <p>Contenuto: {{$post->content}}</p>
 

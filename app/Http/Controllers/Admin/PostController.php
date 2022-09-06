@@ -92,12 +92,13 @@ class PostController extends Controller
     public function show($id)
     {
         // creo una nuova istanza di Carbon
-        $now = Carbon::now();
+        // $now = Carbon::now();
         // dd($now);
 
         // richiamo il model ed eseguo la ricerca per id
         $post = Post::findOrFail($id);
 
+        
         // passo i dati alla show
         $data =[
             'post' => $post
