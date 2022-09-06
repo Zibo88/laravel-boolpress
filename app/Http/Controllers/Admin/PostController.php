@@ -132,7 +132,7 @@ class PostController extends Controller
     {
         // richiamo tutti i dati del form
         $form_data = $request->all();
-        dd($form_data);
+        // dd($form_data);
     }
 
     /**
