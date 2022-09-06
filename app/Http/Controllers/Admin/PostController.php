@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+// importo Carbon
+use Carbon\Carbon;
+
 // importo il MOdel per poter utilizzare il database
 use App\Post;
 
@@ -88,6 +91,10 @@ class PostController extends Controller
      */
     public function show($id)
     {
+        // creo una nuova istanza di Carbon
+        $now = Carbon::now();
+        // dd($now);
+
         // richiamo il model ed eseguo la ricerca per id
         $post = Post::findOrFail($id);
 
