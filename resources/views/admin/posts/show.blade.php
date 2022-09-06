@@ -11,4 +11,10 @@
 
     {{-- creato link (camuffato da button) per la modifica del post da parte dell'admin --}}
     <a href="{{ route ('admin.posts.edit', ['post' => $post->id])}}"><input type="submit" value="Modifica il post"></a>
+
+    {{-- creo un form per la cancellazione dei post --}}
+    <form action="">
+        @csrf
+        <input class="btn btn-danger mt-3" type="submit" value="Cancella">
+    </form>
 @endsection
