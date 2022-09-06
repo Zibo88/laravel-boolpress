@@ -130,7 +130,9 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // richiamo tutti i dati del form
+        $form_data = $request->all();
+        dd($form_data);
     }
 
     /**
