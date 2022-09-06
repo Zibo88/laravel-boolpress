@@ -110,14 +110,14 @@ class PostController extends Controller
     public function edit($id)
     {   
         // richiamo il model per selezionare il post che stiamo modificando in base all'id
-        $post = Post::FinfOrFail($id);
+        $post = Post::FindOrFail($id);
 
         // trasferisco i dati alla view
         $data = [
             'post' => $post
         ];
         // mostra la pagina della view di riferimento
-        return view('admin.posts.edit ');
+        return view('admin.posts.edit' , $data);
 
     }
 
