@@ -19,12 +19,12 @@
     @method('PUT')
     <div class="mb-3">
         <label for="title" class="form-label">Titolo</label>
-        {{-- aggiunta di old alla value --}}
-        <input type="text" class="form-control" id="title" name="title" value="{{$post->title}}">
+        {{-- aggiunta di old alla value, se c'è il titolo stampalo altrimenti stampa il titolo che c'era prima --}}
+        <input type="text" class="form-control" id="title" name="title" value="{{old ('title', $post->title )}}">
     </div>
     <div class="mb-3">
         <label for="content" class="form-label">Contenuto</label>
-        <textarea class="form-control" id="content" rows="3" name="content">{{$post->content}}</textarea>
+        <textarea class="form-control" id="content" rows="3" name="content">{{old ('content', $post->content )}}</textarea>
     </div>
 
   <input type="submit" value="Modifica">
