@@ -162,8 +162,12 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {   
+        // richiamo tutti i post tramite il model analizzandoli per id
+        $post_to_delete = Post::FindOrFail($id);
+        
+        // eseguo la cancellazione
+        $post_to_delete->delete();
     }
 
     // la funzione necessita di un argomento, il $title, da cui poi estrapolerà lo slug
