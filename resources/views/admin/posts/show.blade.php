@@ -9,5 +9,6 @@
     <div>Slug: {{$post->slug}}</div>
     <p>Contenuto: {{$post->content}}</p>
 
-   
+    {{-- creato link (camuffato da button) per la modifica del post da parte dell'admin --}}
+    <a href="{{ route ('admin.posts.edit', ['post' => $post->id])}}"><input type="submit" value="Modifica il post"></a>
 @endsection
