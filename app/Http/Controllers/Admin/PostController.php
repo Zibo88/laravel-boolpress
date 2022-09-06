@@ -168,6 +168,9 @@ class PostController extends Controller
         
         // eseguo la cancellazione
         $post_to_delete->delete();
+
+        // reindirizzo l'utente alla pagina con tutti i posts
+        return redirect()->route('admin.posts.index');
     }
 
     // la funzione necessita di un argomento, il $title, da cui poi estrapolerà lo slug
