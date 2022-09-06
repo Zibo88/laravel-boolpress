@@ -13,8 +13,9 @@
     <a href="{{ route ('admin.posts.edit', ['post' => $post->id])}}"><input type="submit" value="Modifica il post"></a>
 
     {{-- creo un form per la cancellazione dei post --}}
-    <form action="">
+    <form action="{{route ('admin.posts.destroy', ['post' => $post->id])}}" method="post">
         @csrf
+        @method('DELETE')
         <input class="btn btn-danger mt-3" type="submit" value="Cancella">
     </form>
 @endsection
