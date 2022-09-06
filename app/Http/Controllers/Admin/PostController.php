@@ -51,10 +51,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         // validazione 
-		$request->validate ([
-		    'title' => 'required | max:255',
-			'content' => 'required | max:60000'
-		]);				
+		$request->validate ($this->getValidation());				
 
         // leggo i dati provenienti dal form
         $form_data = $request->all();
@@ -166,5 +163,13 @@ class PostController extends Controller
         };
 
         return $slug_to_save;
+    }
+
+    protected function getValidation(){
+        return[
+		    'title' => 'required | max:255',
+			'content' => 'required | max:60000'
+		];				
+
     }
 }
