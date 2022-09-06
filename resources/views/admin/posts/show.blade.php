@@ -9,4 +9,5 @@
     <div>Slug: {{$post->slug}}</div>
     <p>Contenuto: {{$post->content}}</p>
 
+   
 @endsection

@@ -132,7 +132,25 @@ class PostController extends Controller
     {
         // richiamo tutti i dati del form
         $form_data = $request->all();
-        // dd($form_data);
+
+        // richiamo il model e definisco l'id del post che vogliamo modificare
+        $post_to_update = Post::FindOrFail($id);
+
+        // se il nuovo titolo è diverso dal vecchio titolo
+        if($form_data['title'] !== $post_to_update->title){
+             // compilazione dello slug
+            $form_data['slug'] = $this->getSlugTitle($form_data['title']);
+        }else{
+            // altrimenti sarà uguale al vecchio titolo
+            $form_data['slug'] = $post_to_update->title;
+        };
+
+        // eseguo l'update dei dati formìniti dal form
+        $post_to_update->update($form_data);
+
+        // eseguo una redirect alla pagina del prodotto creato
+        return redirect()->route('admin.posts.show' , ['post' => $post_to_update->id]);
+      
     }
 
     /**
