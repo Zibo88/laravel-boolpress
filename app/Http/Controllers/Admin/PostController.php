@@ -61,34 +61,13 @@ class PostController extends Controller
         $new_post->fill($form_data);
         // dd($new_post);
 
-        // per i dati che invece vogliamo aggiungere a mano
-        // lo slug necessita della classe Str per essere formattato nel modo corretto
-        //modifico lo slug così da averne uno potenzialmente salvabile
-        // $new_post->slug = Str::slug($new_post->title , '-');
-        $slug_to_save = Str::slug($new_post->title , '-');
-
-        // creo uno slug base prima di avviare il ciclo while così da non avere il counter
-        $slug_base = $slug_to_save;
-
-        // verifico la presenza dello slug
-        $existing_slug = Post::where('slug', '=', $slug_to_save )->first();
-        // se trova un post torna l'elemento altrimenti torna null
-        // dd($existing_slug);
-
-        // creo il ciclo while per leggere gli slug esistenti, il ciclo andrà avanti finchè $existing_slug non sarà null
-        $counter = 1;
-        while($existing_slug){
-            // creiamo un nuovo slug
-            $slug_to_save = $slug_base . '-' . $counter;
-            // verifico la presenza dello slug
-            $existing_slug = Post::where('slug', '=', $slug_to_save )->first();
-
-            // incremento
-            $counter++;
-        };
+       
         // eseguo assegnazione dello slug a mano e non con il fillable
-        $new_post->slug = $slug_to_save;
-        
+        // $new_post->slug = $slug_to_save;
+
+        // rieseguo l'assegnazione utilizzando la funzione
+        $new_post->slug = $this->getSlugTitle($new_post->title);
+
         // salviamo il post
         $new_post->save();
 
@@ -151,5 +130,35 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    // la funzione necessita di un argomento, il $title, da cui poi estrapolerà lo slug
+    protected function getSlugTitle($title){
+         // per i dati che invece vogliamo aggiungere a mano
+        // lo slug necessita della classe Str per essere formattato nel modo corretto
+        //modifico lo slug così da averne uno potenzialmente salvabile
+        // $new_post->slug = Str::slug($new_post->title , '-');
+        $slug_to_save = Str::slug($title, '-');
+
+        // creo uno slug base prima di avviare il ciclo while così da non avere il counter
+        $slug_base = $slug_to_save;
+
+        // verifico la presenza dello slug
+        $existing_slug = Post::where('slug', '=', $slug_to_save )->first();
+        // se trova un post torna l'elemento altrimenti torna null
+        // dd($existing_slug);
+
+        // creo il ciclo while per leggere gli slug esistenti, il ciclo andrà avanti finchè $existing_slug non sarà null
+        $counter = 1;
+        while($existing_slug){
+            // creiamo un nuovo slug
+            $slug_to_save = $slug_base . '-' . $counter;
+            // verifico la presenza dello slug
+            $existing_slug = Post::where('slug', '=', $slug_to_save )->first();
+            // incremento
+            $counter++;
+        };
+
+        return $slug_to_save;
     }
 }
