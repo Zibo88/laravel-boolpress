@@ -130,6 +130,8 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // esegui validazioni
+        $request->validate($this->getValidation());
         // richiamo tutti i dati del form
         $form_data = $request->all();
 
