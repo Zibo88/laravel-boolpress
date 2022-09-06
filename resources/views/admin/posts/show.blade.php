@@ -17,6 +17,6 @@
     <form action="{{route ('admin.posts.destroy', ['post' => $post->id])}}" method="post">
         @csrf
         @method('DELETE')
-        <input class="btn btn-danger mt-3" type="submit" value="Cancella">
+        <input class="btn btn-danger mt-3" type="submit" value="Cancella" onClick="return confirm ('Sicuro di voler cancellare il post?')" >
     </form>
 @endsection
