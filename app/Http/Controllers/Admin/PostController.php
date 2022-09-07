@@ -14,6 +14,9 @@ use App\Post;
 // importo la class Str per lo slug
 use Illuminate\Support\Str;
 
+// importo il model del tabella categories
+use App\Category;
+
 class PostController extends Controller
 {
     /**
@@ -41,6 +44,13 @@ class PostController extends Controller
      */
     public function create()
     {   
+        // accedo a tutti i dati della tabella attraverso il model
+        $categories = Category::all();
+
+        // passo i dati alla view
+        $data = [
+            'categories' => $categories
+        ];
         // richiamo la view create per la visualizzazione del form
         return view('admin.posts.create');
     }

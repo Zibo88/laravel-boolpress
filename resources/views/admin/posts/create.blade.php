@@ -16,14 +16,15 @@
         @csrf
         @method('POST')
         {{-- select --}}
-        {{-- creo la select in view create per dare la possibilità all'utente di modificarla --}}
+        {{-- creo la select in view create per dare la possibilità all'utente di modificarla, assegno all'id e al name il nome della colonna da cui prendere i dati --}}
         <label for="category_id">Categoria</label>
         <div class="mb-3">
             <select class="form-select" aria-label="Default select example" name="category_id">
                 <option selected>Open this select menu</option>
-                <option value="1">One</option>
+                <option value="1">Antipasti</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
+                <option value="4">Three</option>
             </select>
         </div>
        
