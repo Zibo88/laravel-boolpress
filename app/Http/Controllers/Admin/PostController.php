@@ -52,7 +52,7 @@ class PostController extends Controller
             'categories' => $categories
         ];
         // richiamo la view create per la visualizzazione del form
-        return view('admin.posts.create');
+        return view('admin.posts.create',$data);
     }
 
     /**
