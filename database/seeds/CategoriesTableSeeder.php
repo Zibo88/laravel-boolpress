@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+// importo il model
+use App\Category;
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -19,5 +21,11 @@ class CategoriesTableSeeder extends Seeder
 			'Dessert',
 		];
 
+        // per ogni elemento presente in categories stampa una nuova riga
+        foreach ($categories as $category) {
+            
+            // ad ogni iterazione crea una nuova istanza di Category()
+            $new_category = new Category();
+        }
     }
 }
