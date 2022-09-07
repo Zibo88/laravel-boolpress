@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriesTab extends Migration
+class AddCategoryId extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateCategoriesTab extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 255);
-            $table->string('slug', 255)->unique();
-            $table->timestamps();
+        Schema::table('posts', function (Blueprint $table) {
+            //
         });
     }
 
@@ -27,7 +24,9 @@ class CreateCategoriesTab extends Migration
      * @return void
      */
     public function down()
-   {
-        Schema::dropIfExists('categories');
+    {
+        Schema::table('posts', function (Blueprint $table) {
+            //
+        });
     }
 }
