@@ -10,7 +10,14 @@ class CategoriesTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        //
+    {   
+        // definisco le categorie
+        $categories = [
+			'Antipasti',
+			'Primi',
+			'Secondi',
+			'Dessert',
+		];
+
     }
 }
