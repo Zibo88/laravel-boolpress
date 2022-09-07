@@ -27,6 +27,7 @@
                 <option value="{{$category->id}}" {{old('category_id') == $category->id ? 'selected' : ''}}> {{$category->name}} </option>
             @endforeach
         </select>
+    </div>    
     <div class="mb-3">
         <label for="title" class="form-label">Titolo</label>
         {{-- aggiunta di old alla value, se c'è il titolo stampalo altrimenti stampa il titolo che c'era prima --}}
