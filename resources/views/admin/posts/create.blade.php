@@ -20,11 +20,10 @@
         <label for="category_id">Categoria</label>
         <div class="mb-3">
             <select class="form-select" aria-label="Default select example" name="category_id">
-                <option selected>Open this select menu</option>
+                <option selected>Seleziona La categoria</option>
                   {{-- ciclo foreach per leggere i dati provenienti dal controller --}}
                 @foreach($categories as $category)
                 {{-- se l’elemento selezionato ha lo stesso id di $category->id allora stampa ‘selectd’ altrimenti ‘’ --}}
-
                     <option value="{{$category->id}}" {{old('category_id') == $category->id ? 'selected' : ''}}> {{$category->name}} </option>
                 @endforeach
         
