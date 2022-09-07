@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 // importo il model
 use App\Category;
+// importo la classe Str per lo slug
+use Illuminate\Support\Str;
 
 
 class CategoriesTableSeeder extends Seeder
@@ -30,6 +32,12 @@ class CategoriesTableSeeder extends Seeder
 
             // popolo le colonne della tabella categories
             $new_category->name = $category;
+
+            // uso la classe STR per compilare lo slug
+            $new_category->slug = Str::slug($category, '-');
+
+            // salvo
+            $new_category->save();
             
 
         }
