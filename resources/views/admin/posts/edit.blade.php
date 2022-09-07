@@ -24,7 +24,7 @@
               {{-- ciclo foreach per leggere i dati provenienti dal controller --}}
             @foreach($categories as $category)
             {{-- se l’elemento selezionato ha lo stesso id di $category->id allora stampa ‘selectd’ altrimenti ‘’ --}}
-                <option value="{{$category->id}}" {{old('category_id') == $category->id ? 'selected' : ''}}> {{$category->name}} </option>
+                <option value="{{$category->id}}"> {{$category->name}} </option>
             @endforeach
         </select>
     </div>    
