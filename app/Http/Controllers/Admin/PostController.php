@@ -135,7 +135,8 @@ class PostController extends Controller
 
         // trasferisco i dati alla view
         $data = [
-            'post' => $post
+            'post' => $post,
+            'categories' => $categories
         ];
         // mostra la pagina della view di riferimento
         return view('admin.posts.edit' , $data);
