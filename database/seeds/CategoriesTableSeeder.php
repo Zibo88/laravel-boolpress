@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 // importo il model
 use App\Category;
 
+
 class CategoriesTableSeeder extends Seeder
 {
     /**
@@ -26,6 +27,11 @@ class CategoriesTableSeeder extends Seeder
             
             // ad ogni iterazione crea una nuova istanza di Category()
             $new_category = new Category();
+
+            // popolo le colonne della tabella categories
+            $new_category->name = $category;
+            
+
         }
     }
 }
