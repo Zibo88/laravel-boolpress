@@ -1,4 +1,4 @@
-<?php
+php artisan serve<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -14,7 +14,13 @@ class AddCategoryId extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            //
+            // aggiungo la nuova colonna alla tabella posts
+            $table->unsignedBigInteger('category_id')->nullable();
+
+            // creo la relazione con: nome colonna che avrà la FK, a quale colonna della tabella principale deve fare riferimento, quale tabella utilizzare 
+            $table->foreign('category_id')->references('id')->on('posts');
+
+
         });
     }
 
