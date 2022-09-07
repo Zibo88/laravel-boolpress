@@ -10,7 +10,8 @@ class Post extends Model
     protected $fillable = [
         'title',
         'content',
-        'slug'
+        'slug',
+        'category_id'
     ];
 
     // definisco il tipo di relazione tra le tabelle, la fk è in post ed appartiene alla tabella gestista dal model Category
