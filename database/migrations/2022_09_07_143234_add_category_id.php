@@ -32,7 +32,10 @@ class AddCategoryId extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-            //
+            // prima cancelli la relazione
+			$table->dropForeign('categories_category_id_foreign');
+		    // cancella la colonna
+			$table->dropColumn('category_id');
         });
     }
 }
