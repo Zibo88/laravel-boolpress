@@ -7,6 +7,10 @@
     <div> Creato il: {{$post->created_at->format('d - F - Y')}}</div>
     <div> Aggiornato il: {{$post->updated_at->format('d - F - Y')}}</div>
     <div>Slug: {{$post->slug}}</div>
+
+    <div>Categoria: {{$post->category ? $post->category->name : 'nessuna'}}	</div>				
+
+
     <p>Contenuto: {{$post->content}}</p>
 
     {{-- creato link (camuffato da button) per la modifica del post da parte dell'admin --}}

@@ -98,7 +98,7 @@ class PostController extends Controller
         // richiamo il model ed eseguo la ricerca per id
         $post = Post::findOrFail($id);
 
-        dd($post->category);
+        // dd($post->category);
         // passo i dati alla show
         $data =[
             'post' => $post
