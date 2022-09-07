@@ -15,7 +15,7 @@ class AddCategoryId extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             // aggiungo la nuova colonna alla tabella posts
-            $table->unsignedBigInteger('category_id')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable()->after('slug');
 
             // creo la relazione con: nome colonna che avrà la FK, a quale colonna della tabella principale deve fare riferimento, quale tabella utilizzare 
             $table->foreign('category_id')->references('id')->on('posts');
@@ -33,7 +33,7 @@ class AddCategoryId extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             // prima cancelli la relazione
-			$table->dropForeign('categories_category_id_foreign');
+			$table->dropForeign('posts_category_id_foreign');
 		    // cancella la colonna
 			$table->dropColumn('category_id');
         });
