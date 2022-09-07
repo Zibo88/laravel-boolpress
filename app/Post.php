@@ -13,4 +13,9 @@ class Post extends Model
         'slug'
     ];
 
+    // definisco il tipo di relazione tra le tabelle, la fk è in post ed appartiene alla tabella gestista dal model Category
+    public function category() {
+        return $this->belongsTo('App\Category');
+    }
+
 }

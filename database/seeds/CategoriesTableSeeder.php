@@ -25,16 +25,16 @@ class CategoriesTableSeeder extends Seeder
 		];
 
         // per ogni elemento presente in categories stampa una nuova riga
-        foreach ($categories as $category) {
+        foreach ($categories as $category_name) {
             
             // ad ogni iterazione crea una nuova istanza di Category()
             $new_category = new Category();
 
             // popolo le colonne della tabella categories
-            $new_category->name = $category;
+            $new_category->name = $category_name;
 
             // uso la classe STR per compilare lo slug
-            $new_category->slug = Str::slug($category, '-');
+            $new_category->slug = Str::slug($category_name, '-');
 
             // salvo
             $new_category->save();
