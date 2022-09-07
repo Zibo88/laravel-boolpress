@@ -21,7 +21,10 @@
         <div class="mb-3">
             <select class="form-select" aria-label="Default select example" name="category_id">
                 <option selected>Open this select menu</option>
-              
+                  {{-- ciclo foreach per leggere i dati provenienti dal controller --}}
+                @foreach($categories as $category)
+                    <option value="{{$category->id}}"> {{$category->name}} </option>
+                @endforeach
         
             </select>
         </div>
