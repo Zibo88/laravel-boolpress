@@ -17,6 +17,8 @@ use Illuminate\Support\Str;
 // importo il model del tabella categories
 use App\Category;
 
+
+
 class PostController extends Controller
 {
     /**
@@ -26,6 +28,7 @@ class PostController extends Controller
      */
     public function index()
     {   
+
         // richiamo il Model e gli chiedo tutto il database
         $posts = Post::all();
         // controllo 

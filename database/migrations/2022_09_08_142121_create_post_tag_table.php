@@ -18,7 +18,7 @@ class CreatePostTagTable extends Migration
             $table->unsignedBigInteger('post_id');
             $table->unsignedBigInteger('tag_id');
 
-            // assegno le foreign key ad entrambe le tabelle
+            // rendo foreign key entrambe le colonne
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
