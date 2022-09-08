@@ -17,8 +17,8 @@ class AddCategoryId extends Migration
             // aggiungo la nuova colonna alla tabella posts
             $table->unsignedBigInteger('category_id')->nullable()->after('slug');
 
-            // creo la relazione con: nome colonna che avrà la FK, a quale colonna della tabella principale deve fare riferimento, quale tabella utilizzare 
-            $table->foreign('category_id')->references('id')->on('posts')->onDelete('set null');
+            // creo la relazione con: nome colonna che avrà la FK, a quale colonna della tabella deve fare riferimento, quale tabella utilizzare 
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
 
 
         });
