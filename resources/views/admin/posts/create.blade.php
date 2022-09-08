@@ -33,10 +33,12 @@
 
         {{-- CHECKBOX --}}
         <div class="mb-3">
+            {{-- stampo il nome dei tags nella check box --}}
             @foreach ($tags as $tag)
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    {{-- associo for e id della input dando come valore l'id del tag --}}
+                    <input class="form-check-input" type="checkbox" value="" id="{{$tag->id}}">
+                    <label class="form-check-label" for="{{$tag->id}}">
                     {{$tag->name}}
                     </label>
                 </div>
