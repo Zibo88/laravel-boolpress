@@ -14,11 +14,13 @@ class CreatePostTagTable extends Migration
     public function up()
     {
         Schema::create('post_tag', function (Blueprint $table) {
-            // creo le colonne della tabella ponte
+            // creo le colonne della tabella post_tag
             $table->unsignedBigInteger('post_id');
-		    $table->unsignedBigInteger('tag_id');
+            $table->unsignedBigInteger('tag_id');
 
-
+            // assegno le foreign key ad entrambe le tabelle
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
     }
 
