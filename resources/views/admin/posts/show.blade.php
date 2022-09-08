@@ -18,7 +18,7 @@
         @endforeach
        
        @else
-            nessuna categoria associata  
+            Nessuna categoria associata  
        @endif
        
    </div>

@@ -30,6 +30,15 @@
         
             </select>
         </div>
+
+        {{-- CHECKBOX --}}
+        <div class="form-check">
+            <h5>Tags</h5>
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Default checkbox
+            </label>
+          </div>
        
 
         {{-- titolo --}}

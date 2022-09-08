@@ -17,6 +17,7 @@ use Illuminate\Support\Str;
 // importo il model del tabella categories
 use App\Category;
 
+// importo il model dei tag
 use App\Tag;
 
 class PostController extends Controller
@@ -49,6 +50,9 @@ class PostController extends Controller
     {   
         // accedo a tutti i dati della tabella attraverso il model
         $categories = Category::all();
+
+        
+
         // passo i dati alla view
         $data = [
             'categories' => $categories
