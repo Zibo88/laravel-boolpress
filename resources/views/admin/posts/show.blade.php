@@ -12,9 +12,15 @@
     
    <div> Tag: 
        {{-- ciclo foreach sulla collection --}}
-       @foreach ($post->tags as $tag)
-            {{$tag->name}}{{ !$loop->last ? ' -' : '' }}
-       @endforeach
+       @if($post->tags->isNotEmpty()) 
+        @foreach ($post->tags as $tag)
+            {{ $tag->name }} {{ !$loop->last ? ' -' : '' }}
+        @endforeach
+       
+       @else
+            nessuna categoria associata  
+       @endif
+       
    </div>
 
 
