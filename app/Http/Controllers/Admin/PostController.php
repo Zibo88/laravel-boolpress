@@ -149,11 +149,14 @@ class PostController extends Controller
         // richiamo tutti i dati dalla tabella categories attraverso il suo model
         $categories = Category::all();
 
+        //richiamo il model dei tag per leggere i tag all'interno di edit
+        $tags = Tag::all();
 
         // trasferisco i dati alla view
         $data = [
             'post' => $post,
-            'categories' => $categories
+            'categories' => $categories,
+            'tags' => $tags
         ];
         // mostra la pagina della view di riferimento
         return view('admin.posts.edit',$data);
