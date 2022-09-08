@@ -32,13 +32,18 @@
         </div>
 
         {{-- CHECKBOX --}}
-        <div class="form-check">
-            <h5>Tags</h5>
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-              Default checkbox
-            </label>
-          </div>
+        <div class="mb-3">
+            @foreach ($tags as $tag)
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                    {{$tag->name}}
+                    </label>
+                </div>
+            @endforeach
+            
+        </div>
+       
        
 
         {{-- titolo --}}
