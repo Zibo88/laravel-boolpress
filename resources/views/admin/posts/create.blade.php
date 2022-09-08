@@ -36,8 +36,8 @@
             {{-- stampo il nome dei tags nella check box --}}
             @foreach ($tags as $tag)
                 <div class="form-check">
-                    {{-- associo for e id della input dando come valore l'id del tag --}}
-                    <input class="form-check-input" type="checkbox" value="{{$tag->id}}" id="{{$tag->id}}">
+                    {{-- associo for e id della input dando come valore l'id del tag, la value dovrà salvare sul db l'id del tag, il name è dato in base a che tipo di dato ci aspettiamo nel back end. In questo caso una lista di tag --}}
+                    <input class="form-check-input" type="checkbox" value="{{$tag->id}}" id="{{$tag->id}}" name="tags">
                     <label class="form-check-label" for="{{$tag->id}}">
                     {{$tag->name}}
                     </label>
