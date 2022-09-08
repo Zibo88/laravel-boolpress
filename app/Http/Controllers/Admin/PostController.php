@@ -149,6 +149,7 @@ class PostController extends Controller
         // richiamo tutti i dati dalla tabella categories attraverso il suo model
         $categories = Category::all();
 
+
         // trasferisco i dati alla view
         $data = [
             'post' => $post,
