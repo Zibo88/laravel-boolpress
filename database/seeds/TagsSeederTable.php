@@ -21,6 +21,13 @@ class TagsSeederTable extends Seeder
             'Gluten Free',
         ];
 
+        // avvio ciclo foreach per leggere il contenuto dei tags
+        foreach ($tags as $tag) {
+            
+            // ad ogni iterazione creo un nuova istanza del model tag
+            $new_tag = new Tag();
+        }
+
         
     }
 }
