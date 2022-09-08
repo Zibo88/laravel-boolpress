@@ -21,11 +21,12 @@
     <label for="category_id">Categoria</label>
     <div class="mb-3">
         <select class="form-select" aria-label="Default select example" name="category_id">
-            <option selected>Seleziona La categoria</option>
+            <option selected>Seleziona La categoria</option> 
               {{-- ciclo foreach per leggere i dati provenienti dal controller --}}
             @foreach($categories as $category)
+            {{-- {{dd($category->name)}} --}}
             {{-- se la categoria presente è uguale alla categoria dell’id del post stampa 'selected' altrimenti '' --}}
-                <option value="{{$category->id}}" {{old ('category_id' , $post->category->id ) == $category->id ? 'selected' : ''}}> {{$category->name}} </option>
+                 <option value="{{ $category->id }}" {{ old('category_id', $post->category_id) == $category->id ? 'selected' : ''}}> {{$category->name}} </option> 
             @endforeach
         </select>
     </div>    
@@ -41,6 +42,6 @@
         <textarea class="form-control" id="content" rows="3" name="content">{{old ('content', $post->content )}}</textarea>
     </div>
 
-  <input type="submit" value="Modifica">
+    <input type="submit" value="Invia">
 </form>
 @endsection

@@ -46,7 +46,6 @@ class PostController extends Controller
     {   
         // accedo a tutti i dati della tabella attraverso il model
         $categories = Category::all();
-
         // passo i dati alla view
         $data = [
             'categories' => $categories
@@ -108,7 +107,7 @@ class PostController extends Controller
         // richiamo il model ed eseguo la ricerca per id
         $post = Post::findOrFail($id);
 
-        // dd($post->category);
+       
         // passo i dati alla show
         $data =[
             'post' => $post
@@ -139,7 +138,7 @@ class PostController extends Controller
             'categories' => $categories
         ];
         // mostra la pagina della view di riferimento
-        return view('admin.posts.edit' , $data);
+        return view('admin.posts.edit',$data);
 
     }
 

@@ -19,12 +19,13 @@
         {{-- creo la select in view create per dare la possibilità all'utente di modificarla, assegno all'id e al name il nome della colonna da cui prendere i dati --}}
         <label for="category_id">Categoria</label>
         <div class="mb-3">
-            <select class="form-select" aria-label="Default select example" name="category_id">
-                <option selected>Seleziona La categoria</option>
+             <select class="form-select" aria-label="Default select example" name="category_id">
+                <option selected>Seleziona La categoria</option> 
                   {{-- ciclo foreach per leggere i dati provenienti dal controller --}}
                 @foreach($categories as $category)
+                {{-- {{dd($category->name)}} --}}
                 {{-- se l’elemento selezionato ha lo stesso id di $category->id allora stampa ‘selectd’ altrimenti ‘’ --}}
-                    <option value="{{$category->id}}" {{old('category_id') == $category->id ? 'selected' : ''}}> {{$category->name}} </option>
+                    <option value="{{$category->id}}" {{old('category_id') == $category->id ? 'selected' : ''}}> {{$category->name}} </option> 
                 @endforeach
         
             </select>

@@ -10,13 +10,16 @@ class Post extends Model
     protected $fillable = [
         'title',
         'content',
+        'category_id',
         'slug',
-        'category_id'
+        
     ];
 
     // definisco il tipo di relazione tra le tabelle, la fk è in post ed appartiene alla tabella gestista dal model Category
     public function category() {
         return $this->belongsTo('App\Category');
+        // è possibile definire quale sia la foreignKey dando un secondo argomento
+        // return $this->belongsTo('App\Category', 'category_id');
     }
 
 }
