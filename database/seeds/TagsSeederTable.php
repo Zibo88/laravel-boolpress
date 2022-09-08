@@ -13,7 +13,13 @@ class TagsSeederTable extends Seeder
      */
     public function run()
     {
-       
+        // i tags nel database saranno 4
+        $tags = [
+            'Vegetario',
+            'Piatto Freddo',
+            'Vegano',
+            'Gluten Free',
+        ];
 
         
     }
