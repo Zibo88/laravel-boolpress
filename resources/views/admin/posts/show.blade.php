@@ -8,7 +8,14 @@
     <div> Aggiornato il: {{$post->updated_at->format('d - F - Y')}}</div>
     <div>Slug: {{$post->slug}}</div>
 
-    <div>Categoria: {{$post->category ? $post->category->name : 'nessuna'}}	</div>				
+    <div>Categoria: {{$post->category ? $post->category->name : 'nessuna'}}	</div>		
+    
+   <div> Tag: 
+       {{-- ciclo foreach sulla collection --}}
+       @foreach ($post->tags as $tag)
+            {{$tag->name}}{{ !$loop->last ? ' -' : '' }}
+       @endforeach
+   </div>
 
 
     <p>Contenuto: {{$post->content}}</p>

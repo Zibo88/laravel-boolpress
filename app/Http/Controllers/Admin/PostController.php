@@ -17,7 +17,7 @@ use Illuminate\Support\Str;
 // importo il model del tabella categories
 use App\Category;
 
-
+use App\Tag;
 
 class PostController extends Controller
 {
