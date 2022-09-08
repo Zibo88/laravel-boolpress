@@ -4,6 +4,10 @@ use Illuminate\Database\Seeder;
 // importo il model
 use App\Tag;
 
+// importo la classe str
+use Illuminate\Support\Str;
+
+
 class TagsSeederTable extends Seeder
 {
     /**
@@ -26,6 +30,15 @@ class TagsSeederTable extends Seeder
             
             // ad ogni iterazione creo un nuova istanza del model tag
             $new_tag = new Tag();
+
+            // popolo le righe della tabella
+            $new_tag->name = $tag;
+
+            // utilizzo la classe str per creare lo slug
+            $new_tag->slug = Str::slug( $new_tag->name, '-');
+
+            // salvo
+            $new_tag->save();
         }
 
         
