@@ -51,11 +51,13 @@ class PostController extends Controller
         // accedo a tutti i dati della tabella attraverso il model
         $categories = Category::all();
 
-        
+        // accedo ai dati della tabella tags attraverso il model
+        $tags = Tag::all();
 
         // passo i dati alla view
         $data = [
-            'categories' => $categories
+            'categories' => $categories,
+            'tags' => $tags
         ];
         // richiamo la view create per la visualizzazione del form
         return view('admin.posts.create',$data);
