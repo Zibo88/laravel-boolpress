@@ -72,11 +72,13 @@ class PostController extends Controller
     public function store(Request $request)
     {
         // validazione 
-		$request->validate ($this->getValidation());				
+		$request->validate ($this->getValidation());	
+        
+     
 
         // leggo i dati provenienti dal form
         $form_data = $request->all();
-        // dd($form_data);
+       
 
         // creo nuova riga richiamando il model
         $new_post = new Post();
@@ -94,6 +96,9 @@ class PostController extends Controller
 
         // salviamo il post
         $new_post->save();
+
+        // eseguo il salvaggio dei tag
+        $new_post->tags()->sync($form_data['tags']);
 
 
         // reindirizzo l'utente verso il post appena creato avvelendomi dell'id
