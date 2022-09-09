@@ -45,10 +45,7 @@
                     </label>
                 </div>
             @endforeach
-            
         </div>
-       
-       
 
         {{-- titolo --}}
         <div class="mb-3">
@@ -64,4 +61,5 @@
 
         <input type="submit" value="Salva">
     </form>
+
 @endsection

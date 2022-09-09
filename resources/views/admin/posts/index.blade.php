@@ -17,7 +17,17 @@
                     </div>
                 </div>
             </div>
+
+            
         @endforeach
+
+        {{-- paginazione della index --}}
+        <div class="mb-3">
+            {{ $posts->links() }}
+        </div>
         
     </div>
+
+    {{-- link altre pagine --}}
+   
 @endsection
