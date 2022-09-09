@@ -217,6 +217,7 @@ class PostController extends Controller
         // richiamo tutti i post tramite il model analizzandoli per id
         $post_to_delete = Post::FindOrFail($id);
 
+        // eseguo la cancellazione della relazione, prima di eliminare il post
         $post_to_delete->tags()->sync([]);
 
         // eseguo la cancellazione
