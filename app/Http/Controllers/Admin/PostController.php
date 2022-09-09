@@ -192,6 +192,15 @@ class PostController extends Controller
         // eseguo l'update dei dati formìniti dal form
         $post_to_update->update($form_data);
 
+        // se l'utente ha settato, checckato le check box, torna la relazione
+        if(isset($form_data['tags'])){
+			$post_to_update->tags()->sync($form_data['tags']);
+            // altrimenti torna un array vuoto
+		}else{
+			$post_to_update->tags()->sync([]);
+		}
+
+
         // eseguo una redirect alla pagina del prodotto creato
         return redirect()->route('admin.posts.show' , ['post' => $post_to_update->id]);
       

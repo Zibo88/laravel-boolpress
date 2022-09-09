@@ -37,7 +37,7 @@
         @foreach ($tags as $tag)
             <div class="form-check">
                 {{-- associo for e id della input dando come valore l'id del tag, la value dovrà salvare sul db l'id del tag, il name è dato in base a che tipo di dato ci aspettiamo nel back end. In questo caso una lista di tag. aggiungiamo le [] per permettere all'utente di scegliere più caselle nella checkbox --}}
-                <input class="form-check-input" type="checkbox" value="{{$tag->id}}" id="tag-{{$tag->id}}"name="tags[]">
+                <input class="form-check-input" type="checkbox" value="{{$tag->id}}" id="tag-{{$tag->id}}"name="tags[]" {{ $post->tags->contains($tag) ? 'checked' : '' }}>
                 <label class="form-check-label" for="{{$tag->id}}">
                 {{$tag->name}}
                 </label>
