@@ -35,13 +35,25 @@
     <div class="mb-3">
         {{-- stampo il nome dei tags nella check box --}}
         @foreach ($tags as $tag)
-            <div class="form-check">
-                {{-- associo for e id della input dando come valore l'id del tag, la value dovrà salvare sul db l'id del tag, il name è dato in base a che tipo di dato ci aspettiamo nel back end. In questo caso una lista di tag. aggiungiamo le [] per permettere all'utente di scegliere più caselle nella checkbox --}}
-                <input class="form-check-input" type="checkbox" value="{{$tag->id}}" id="tag-{{$tag->id}}"name="tags[]" {{ $post->tags->contains($tag) ? 'checked' : '' }}>
-                <label class="form-check-label" for="{{$tag->id}}">
-                {{$tag->name}}
-                </label>
-            </div>
+            @if ($errors->any())
+                <div class="form-check">
+                    {{-- associo for e id della input dando come valore l'id del tag, la value dovrà salvare sul db l'id del tag, il name è dato in base a che tipo di dato ci aspettiamo nel back end. In questo caso una lista di tag. aggiungiamo le [] per permettere all'utente di scegliere più caselle nella checkbox --}}
+                    {{-- la if($errors->any()): se ci sono errori controlaa se nell'array old('tags') è presente il tag->id --}}
+                    <input class="form-check-input" type="checkbox" value="{{$tag->id}}" id="tag-{{$tag->id}}"name="tags[]" {{ in_array($tag->id, (old ('tags'))) ? 'checked' : '' }}>
+                    <label class="form-check-label" for="{{$tag->id}}">
+                    {{$tag->name}}
+                    </label>
+                </div>
+            @else
+                <div class="form-check">
+                    {{-- associo for e id della input dando come valore l'id del tag, la value dovrà salvare sul db l'id del tag, il name è dato in base a che tipo di dato ci aspettiamo nel back end. In questo caso una lista di tag. aggiungiamo le [] per permettere all'utente di scegliere più caselle nella checkbox --}}
+                    <input class="form-check-input" type="checkbox" value="{{$tag->id}}" id="tag-{{$tag->id}}"name="tags[]" {{ $post->tags->contains($tag) ? 'checked' : '' }}>
+                    <label class="form-check-label" for="{{$tag->id}}">
+                    {{$tag->name}}
+                    </label>
+                </div>
+            @endif
+           
         @endforeach
         
     </div>
