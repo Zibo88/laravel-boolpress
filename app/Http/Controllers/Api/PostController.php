@@ -13,15 +13,15 @@ class PostController extends Controller
 
     // richiamo con il model tutti i post
     $posts = Post::all();
-   
+    // dd($posts);
     // passo i dati
     $data = [
-        'results' => $posts
+         'results' => $posts
     ];
+    // dd($data);
 
     // chiedo che i dati siano passati in formato json
     return response()->json($data);
 
-       
    }
 }
