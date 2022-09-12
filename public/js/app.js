@@ -1915,6 +1915,11 @@ __webpack_require__.r(__webpack_exports__);
     return {
       pageTitle: 'Ciao sono Posts'
     };
+  },
+  mounted: function mounted() {
+    axios.get('http://127.0.0.1:8000/api/posts').then(function (response) {
+      console.log(response);
+    });
   }
 });
 
