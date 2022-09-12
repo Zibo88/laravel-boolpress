@@ -23,7 +23,9 @@
                     <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
                     <li class="page-item"><a class="page-link" href="#">2</a></li>
                     <li class="page-item"><a class="page-link" href="#">3</a></li> -->
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    <li class="page-item" @click="getAxiosCall(currentPaginationPage + 1)">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -42,6 +44,10 @@ export default {
             pageTitle: 'Ciao sono Posts',
             // array vuoto per inserire i dati dalla chiamata axios
             posts: [],
+            // pagina corrente
+            currentPaginationPage: 1
+
+
         }
     },
 
@@ -72,6 +78,8 @@ export default {
             // assegno ai post i dati provenienti dal database
             //  console.log(response.data.results.data) (controllo dopo paginate nel model)
             this.posts = response.data.results.data;
+            //chiamata per assegnare il vlore di current_page a currentPaginationPage
+            this.currentPaginationPage = response.data.results.current_page
            
         
         });

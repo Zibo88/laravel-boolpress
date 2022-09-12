@@ -1915,7 +1915,9 @@ __webpack_require__.r(__webpack_exports__);
     return {
       pageTitle: 'Ciao sono Posts',
       // array vuoto per inserire i dati dalla chiamata axios
-      posts: []
+      posts: [],
+      // pagina corrente
+      currentPaginationPage: 1
     };
   },
   methods: {
@@ -1941,7 +1943,9 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         // assegno ai post i dati provenienti dal database
         //  console.log(response.data.results.data) (controllo dopo paginate nel model)
-        _this.posts = response.data.results.data;
+        _this.posts = response.data.results.data; //chiamata per assegnare il vlore di current_page a currentPaginationPage
+
+        _this.currentPaginationPage = response.data.results.current_page;
       });
     }
   },
@@ -2007,34 +2011,39 @@ var render = function render() {
     }, [_vm._v(_vm._s(post.title))]), _vm._v(" "), _c("p", {
       staticClass: "card-text"
     }, [_vm._v(_vm._s(_vm.cutText(post.content)))])])])]);
-  }), 0), _vm._v(" "), _vm._m(0)])]);
+  }), 0), _vm._v(" "), _c("nav", {
+    attrs: {
+      "aria-label": "Page navigation example"
+    }
+  }, [_c("ul", {
+    staticClass: "pagination"
+  }, [_vm._m(0), _vm._v(" "), _c("li", {
+    staticClass: "page-item",
+    on: {
+      click: function click($event) {
+        return _vm.getAxiosCall(_vm.currentPaginationPage + 1);
+      }
+    }
+  }, [_c("a", {
+    staticClass: "page-link",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Next")])])])])])]);
 };
 
 var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("nav", {
-    attrs: {
-      "aria-label": "Page navigation example"
-    }
-  }, [_c("ul", {
-    staticClass: "pagination"
-  }, [_c("li", {
+  return _c("li", {
     staticClass: "page-item"
   }, [_c("a", {
     staticClass: "page-link",
     attrs: {
       href: "#"
     }
-  }, [_vm._v("Previous")])]), _vm._v(" "), _c("li", {
-    staticClass: "page-item"
-  }, [_c("a", {
-    staticClass: "page-link",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Next")])])])]);
+  }, [_vm._v("Previous")])]);
 }];
 render._withStripped = true;
 
