@@ -42,16 +42,23 @@ export default {
 
             return text
   
+        },
+
+        // funzione per la chiamata axios
+        getAxiosCall(){
+            axios.get('http://127.0.0.1:8000/api/posts')
+            .then((response) => {
+            // assegno ai post i dati provenienti dal database
+            this.posts = response.data.results;
+         
+        
+        });
         }
     },
     mounted() {
-        // creo la chiamata axios nel componente
-        axios.get('http://127.0.0.1:8000/api/posts')
-        .then((response) => {
-            // assegno ai post i dati provenienti dal database
-            this.posts = response.data.results;
-        
-        });
+        // richiamo la chiamata axios nel componente
+        this.getAxiosCall();
+       
     }
    
 }
