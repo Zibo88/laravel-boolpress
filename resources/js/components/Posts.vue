@@ -23,7 +23,9 @@ export default {
     name: 'Posts',
     data(){
         return{
-            pageTitle: 'Ciao sono Posts'
+            pageTitle: 'Ciao sono Posts',
+            // array vuoto per inserire i dati dalla chiamata axios
+            posts: [],
         }
     },
     mounted() {

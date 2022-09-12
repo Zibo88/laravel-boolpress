@@ -1913,7 +1913,9 @@ __webpack_require__.r(__webpack_exports__);
   name: 'Posts',
   data: function data() {
     return {
-      pageTitle: 'Ciao sono Posts'
+      pageTitle: 'Ciao sono Posts',
+      // array vuoto per inserire i dati dalla chiamata axios
+      posts: []
     };
   },
   mounted: function mounted() {
