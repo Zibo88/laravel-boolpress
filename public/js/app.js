@@ -1918,6 +1918,11 @@ __webpack_require__.r(__webpack_exports__);
       posts: []
     };
   },
+  methods: {
+    cutText: function cutText(text) {
+      return text.slice(0, 40) + '...';
+    }
+  },
   mounted: function mounted() {
     var _this = this;
 
@@ -1976,24 +1981,19 @@ var render = function render() {
     return _c("div", {
       key: post.id,
       staticClass: "col"
-    }, [_vm._m(0, true)]);
+    }, [_c("div", {
+      staticClass: "card mt-4"
+    }, [_c("div", {
+      staticClass: "card-body"
+    }, [_c("h5", {
+      staticClass: "card-title"
+    }, [_vm._v(_vm._s(post.title))]), _vm._v(" "), _c("p", {
+      staticClass: "card-text"
+    }, [_vm._v(_vm._s(_vm.cutText(post.content)))])])])]);
   }), 0)])]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "card mt-4"
-  }, [_c("div", {
-    staticClass: "card-body"
-  }, [_c("h5", {
-    staticClass: "card-title"
-  }, [_vm._v("Card title")]), _vm._v(" "), _c("p", {
-    staticClass: "card-text"
-  }, [_vm._v("Some quick example text to build on the card title and make up the bulk of the card's content.")])])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
