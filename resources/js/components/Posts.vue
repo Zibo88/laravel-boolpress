@@ -8,6 +8,6 @@
 <script>
 // assegno il name al componenete
 export default {
-    name: Posts,
+    name: 'Posts',
 }
 </script>
