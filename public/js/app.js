@@ -1919,9 +1919,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
+    var _this = this;
+
     // creo la chiamata axios nel componente
     axios.get('http://127.0.0.1:8000/api/posts').then(function (response) {
-      console.log(response);
+      // assegno ai post i dati provenienti dal database
+      _this.posts = response.data.results;
     });
   }
 });
@@ -1977,6 +1980,8 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
+    staticClass: "col"
+  }, [_c("div", {
     staticClass: "card",
     staticStyle: {
       width: "18rem"
@@ -1987,7 +1992,7 @@ var staticRenderFns = [function () {
     staticClass: "card-title"
   }, [_vm._v("Card title")]), _vm._v(" "), _c("p", {
     staticClass: "card-text"
-  }, [_vm._v("Some quick example text to build on the card title and make up the bulk of the card's content.")])])])])]);
+  }, [_vm._v("Some quick example text to build on the card title and make up the bulk of the card's content.")])])])])])]);
 }];
 render._withStripped = true;
 

@@ -3,14 +3,17 @@
         <h1>{{pageTitle}}</h1>
         <div class="container">
             <div class="row">
-                <div class="card" style="width: 18rem;">
-                    <!-- <img src="..." class="card-img-top" alt="..."> -->
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                        <!-- <img src="..." class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
                     </div>
                 </div>
+               
            </div>
         </div>
     </main>
@@ -32,8 +35,10 @@ export default {
         // creo la chiamata axios nel componente
         axios.get('http://127.0.0.1:8000/api/posts')
         .then((response) => {
-            console.log(response);
-        })
+            // assegno ai post i dati provenienti dal database
+            this.posts = response.data.results;
+        
+        });
     }
    
 }
