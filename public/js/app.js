@@ -1917,7 +1917,9 @@ __webpack_require__.r(__webpack_exports__);
       // array vuoto per inserire i dati dalla chiamata axios
       posts: [],
       // pagina corrente
-      currentPaginationPage: 1
+      currentPaginationPage: 1,
+      // ultima pagina
+      lastPaginationPage: null
     };
   },
   methods: {
@@ -1945,7 +1947,9 @@ __webpack_require__.r(__webpack_exports__);
         //  console.log(response.data.results.data) (controllo dopo paginate nel model)
         _this.posts = response.data.results.data; //chiamata per assegnare il vlore di current_page a currentPaginationPage
 
-        _this.currentPaginationPage = response.data.results.current_page;
+        _this.currentPaginationPage = response.data.results.current_page; // chiamata per assegnare il valore di last_page a lastPaginationPage
+
+        THIS.lastPaginationPage = response.data.results.last_page;
       });
     }
   },

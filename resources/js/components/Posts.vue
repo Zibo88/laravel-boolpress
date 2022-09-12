@@ -50,7 +50,9 @@ export default {
             // array vuoto per inserire i dati dalla chiamata axios
             posts: [],
             // pagina corrente
-            currentPaginationPage: 1
+            currentPaginationPage: 1,
+            // ultima pagina
+            lastPaginationPage: null
 
 
         }
@@ -85,6 +87,8 @@ export default {
             this.posts = response.data.results.data;
             //chiamata per assegnare il vlore di current_page a currentPaginationPage
             this.currentPaginationPage = response.data.results.current_page
+            // chiamata per assegnare il valore di last_page a lastPaginationPage
+            THIS.lastPaginationPage = response.data.results.last_page
            
         
         });
