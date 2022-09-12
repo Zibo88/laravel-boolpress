@@ -1919,8 +1919,14 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    // funzione per tagliare il testo del content
     cutText: function cutText(text) {
-      return text.slice(0, 40) + '...';
+      // se la lunghezza del text è superiore a 40 caratteri torna il text con slice, altrimenti torna text normale
+      if (text.length > 40) {
+        return text.slice(0, 40) + '...';
+      }
+
+      return text;
     }
   },
   mounted: function mounted() {
