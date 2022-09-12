@@ -19,7 +19,9 @@ class PostController extends Controller
         'results' => $posts
     ];
 
-    
+    // chiedo che i dati siano passati in formato json
+    return response()->json($data);
+
        
    }
 }
