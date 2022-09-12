@@ -15,7 +15,20 @@
                     </div>
                 </div>
            </div>
+
+            <!-- paginazione -->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
         </div>
+
+       
     </main>
 </template>
 
@@ -65,8 +78,8 @@ export default {
         }
     },
     mounted() {
-        // richiamo la chiamata axios nel componente
-        this.getAxiosCall(3);
+        // richiamo la chiamata axios nel componente, per fare dei test puoi inserire un numero di pagina diverso da 1
+        this.getAxiosCall(1);
        
     }
    

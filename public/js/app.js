@@ -1946,8 +1946,8 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    // richiamo la chiamata axios nel componente
-    this.getAxiosCall(3);
+    // richiamo la chiamata axios nel componente, per fare dei test puoi inserire un numero di pagina diverso da 1
+    this.getAxiosCall(1);
   }
 });
 
@@ -2007,10 +2007,35 @@ var render = function render() {
     }, [_vm._v(_vm._s(post.title))]), _vm._v(" "), _c("p", {
       staticClass: "card-text"
     }, [_vm._v(_vm._s(_vm.cutText(post.content)))])])])]);
-  }), 0)])]);
+  }), 0), _vm._v(" "), _vm._m(0)])]);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("nav", {
+    attrs: {
+      "aria-label": "Page navigation example"
+    }
+  }, [_c("ul", {
+    staticClass: "pagination"
+  }, [_c("li", {
+    staticClass: "page-item"
+  }, [_c("a", {
+    staticClass: "page-link",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Previous")])]), _vm._v(" "), _c("li", {
+    staticClass: "page-item"
+  }, [_c("a", {
+    staticClass: "page-link",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Next")])])])]);
+}];
 render._withStripped = true;
 
 
