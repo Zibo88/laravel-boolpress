@@ -1934,7 +1934,8 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('http://127.0.0.1:8000/api/posts').then(function (response) {
         // assegno ai post i dati provenienti dal database
-        _this.posts = response.data.results;
+        //  console.log(response.data.results.data) (controllo dopo paginate nel model)
+        _this.posts = response.data.results.data;
       });
     }
   },

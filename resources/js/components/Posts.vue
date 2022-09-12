@@ -49,8 +49,10 @@ export default {
             axios.get('http://127.0.0.1:8000/api/posts')
             .then((response) => {
             // assegno ai post i dati provenienti dal database
-            this.posts = response.data.results;
-         
+            //  console.log(response.data.results.data) (controllo dopo paginate nel model)
+            this.posts = response.data.results.data;
+           
+        
         });
         }
     },
