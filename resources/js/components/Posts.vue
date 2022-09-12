@@ -45,8 +45,16 @@ export default {
         },
 
         // funzione per la chiamata axios
-        getAxiosCall(){
-            axios.get('http://127.0.0.1:8000/api/posts')
+        // assegno un parametro alla funzione
+        getAxiosCall(pageNumber){
+            axios.get('http://127.0.0.1:8000/api/posts', {
+                // do un secondo parametro alla chiamata axios aggiungendo un params
+                params: {
+                    page: pageNumber
+                }
+            }
+            
+            )
             .then((response) => {
             // assegno ai post i dati provenienti dal database
             //  console.log(response.data.results.data) (controllo dopo paginate nel model)
@@ -58,7 +66,7 @@ export default {
     },
     mounted() {
         // richiamo la chiamata axios nel componente
-        this.getAxiosCall();
+        this.getAxiosCall(3);
        
     }
    

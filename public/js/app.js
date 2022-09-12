@@ -1929,10 +1929,16 @@ __webpack_require__.r(__webpack_exports__);
       return text;
     },
     // funzione per la chiamata axios
-    getAxiosCall: function getAxiosCall() {
+    // assegno un parametro alla funzione
+    getAxiosCall: function getAxiosCall(pageNumber) {
       var _this = this;
 
-      axios.get('http://127.0.0.1:8000/api/posts').then(function (response) {
+      axios.get('http://127.0.0.1:8000/api/posts', {
+        // do un secondo parametro alla chiamata axios aggiungendo un params
+        params: {
+          page: pageNumber
+        }
+      }).then(function (response) {
         // assegno ai post i dati provenienti dal database
         //  console.log(response.data.results.data) (controllo dopo paginate nel model)
         _this.posts = response.data.results.data;
@@ -1941,7 +1947,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     // richiamo la chiamata axios nel componente
-    this.getAxiosCall();
+    this.getAxiosCall(3);
   }
 });
 
