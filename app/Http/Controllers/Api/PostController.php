@@ -12,8 +12,13 @@ class PostController extends Controller
    public function index(){
 
     // richiamo con il model tutti i post
-    $post = Post::all();
-    dd($post);
+    $posts = Post::all();
+   
+    // passo i dati
+    $data = [
+        'results' => $posts
+    ];
+
     
        
    }
