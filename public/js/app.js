@@ -2019,6 +2019,9 @@ var render = function render() {
     staticClass: "pagination"
   }, [_c("li", {
     staticClass: "page-item",
+    "class": {
+      disabled: _vm.currentPaginationPage == 1
+    },
     on: {
       click: function click($event) {
         return _vm.getAxiosCall(_vm.currentPaginationPage - 1);
