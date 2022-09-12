@@ -1910,7 +1910,12 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 // assegno il name al componenete
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Posts'
+  name: 'Posts',
+  data: function data() {
+    return {
+      pageTitle: 'Ciao sono Posts'
+    };
+  }
 });
 
 /***/ }),
@@ -1952,15 +1957,10 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("div", [_c("h1", [_vm._v(_vm._s(_vm.pageTitle))])]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", [_c("h1", [_vm._v("ciao")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
