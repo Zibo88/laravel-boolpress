@@ -2017,7 +2017,19 @@ var render = function render() {
     }
   }, [_c("ul", {
     staticClass: "pagination"
-  }, [_vm._m(0), _vm._v(" "), _c("li", {
+  }, [_c("li", {
+    staticClass: "page-item",
+    on: {
+      click: function click($event) {
+        return _vm.getAxiosCall(_vm.currentPaginationPage - 1);
+      }
+    }
+  }, [_c("a", {
+    staticClass: "page-link",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Previous")])]), _vm._v(" "), _c("li", {
     staticClass: "page-item",
     on: {
       click: function click($event) {
@@ -2032,19 +2044,7 @@ var render = function render() {
   }, [_vm._v("Next")])])])])])]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("li", {
-    staticClass: "page-item"
-  }, [_c("a", {
-    staticClass: "page-link",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Previous")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 

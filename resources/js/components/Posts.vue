@@ -19,10 +19,14 @@
             <!-- paginazione -->
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item" @click="getAxiosCall(currentPaginationPage - 1)">
+                        <a class="page-link" href="#">Previous</a>
+                    </li>
                     <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
                     <li class="page-item"><a class="page-link" href="#">2</a></li>
                     <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+                    <!-- quando l'utente clicca su next viene richiamta la funzione getAxiosCall che in base alla currentPaginationPage permette di andare avanti -->
+                    
                     <li class="page-item" @click="getAxiosCall(currentPaginationPage + 1)">
                         <a class="page-link" href="#">Next</a>
                     </li>
