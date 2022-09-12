@@ -51,7 +51,6 @@ export default {
             // assegno ai post i dati provenienti dal database
             this.posts = response.data.results;
          
-        
         });
         }
     },

@@ -11,9 +11,9 @@ class PostController extends Controller
 {
    public function index(){
 
-    // richiamo con il model tutti i post
-    $posts = Post::all();
-    // dd($posts);
+    // chiedo al model di mostrare 6 elementi per pagina
+    $posts = Post::paginate(6);
+
     // passo i dati
     $data = [
         'success' => true,
