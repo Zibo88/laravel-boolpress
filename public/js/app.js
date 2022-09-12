@@ -1971,7 +1971,7 @@ var render = function render() {
   return _c("main", [_c("h1", [_vm._v(_vm._s(_vm.pageTitle))]), _vm._v(" "), _c("div", {
     staticClass: "container"
   }, [_c("div", {
-    staticClass: "row"
+    staticClass: "row row-cols-3"
   }, _vm._l(_vm.posts, function (post) {
     return _c("div", {
       key: post.id,
@@ -1985,7 +1985,7 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "card"
+    staticClass: "card mt-4"
   }, [_c("div", {
     staticClass: "card-body"
   }, [_c("h5", {

@@ -2,10 +2,10 @@
     <main>
         <h1>{{pageTitle}}</h1>
         <div class="container">
-            <div class="row">
+            <div class="row row-cols-3">
                     <!-- eseguo ciclo v-for dell'array posts, e assegno come chiave univoca l'id di ogni post -->
                     <div v-for="post in posts" :key="post.id" class="col">
-                        <div class="card">
+                        <div class="card mt-4">
                         <!-- <img src="..." class="card-img-top" alt="..."> -->
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
