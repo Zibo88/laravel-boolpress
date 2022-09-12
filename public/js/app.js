@@ -1917,6 +1917,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
+    // creo la chiamata axios nel componente
     axios.get('http://127.0.0.1:8000/api/posts').then(function (response) {
       console.log(response);
     });
