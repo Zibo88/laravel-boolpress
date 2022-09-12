@@ -16,7 +16,8 @@ class PostController extends Controller
     // dd($posts);
     // passo i dati
     $data = [
-         'results' => $posts
+        'success' => true,
+        'results' => $posts
     ];
     // dd($data);
 
