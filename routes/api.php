@@ -18,4 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// creo la route per per la visione di tutti i post con vuejs
 Route::get('/posts', 'Api\PostController@index');
