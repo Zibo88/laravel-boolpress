@@ -1949,7 +1949,8 @@ __webpack_require__.r(__webpack_exports__);
 
         _this.currentPaginationPage = response.data.results.current_page; // chiamata per assegnare il valore di last_page a lastPaginationPage
 
-        THIS.lastPaginationPage = response.data.results.last_page;
+        _this.lastPaginationPage = response.data.results.last_page;
+        console.log(_this.lastPaginationPage);
       });
     }
   },
@@ -2036,8 +2037,21 @@ var render = function render() {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("Previous")])]), _vm._v(" "), _c("li", {
+  }, [_vm._v("Previous")])]), _vm._v(" "), _vm._l(_vm.lastPaginationPage, function (pageNumber) {
+    return _c("li", {
+      key: pageNumber,
+      staticClass: "page-item"
+    }, [_c("a", {
+      staticClass: "page-link",
+      attrs: {
+        href: "#"
+      }
+    }, [_vm._v(_vm._s(pageNumber))])]);
+  }), _vm._v(" "), _c("li", {
     staticClass: "page-item",
+    "class": {
+      disabled: _vm.currentPaginationPage == _vm.lastPaginationPage
+    },
     on: {
       click: function click($event) {
         return _vm.getAxiosCall(_vm.currentPaginationPage + 1);
@@ -2048,7 +2062,7 @@ var render = function render() {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("Next")])])])])])]);
+  }, [_vm._v("Next")])])], 2)])])]);
 };
 
 var staticRenderFns = [];

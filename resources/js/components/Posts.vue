@@ -19,23 +19,28 @@
             <!-- paginazione -->
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
+                    <!-- Preview -->
                     <!-- nel caso in cui ci troviamo alla prima pagina inseriamo una classe dinamica che impedisca di poter tornare indietro -->
                     <li class="page-item" @click="getAxiosCall(currentPaginationPage - 1)" :class="{'disabled' : currentPaginationPage == 1}">
                         <a class="page-link" href="#">Previous</a>
                     </li>
-                    <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+
+                    <!-- pagination number -->
+                    <li class="page-item" v-for="pageNumber in lastPaginationPage" :key="pageNumber">
+                        <a class="page-link" href="#">{{pageNumber}}</a>
+                    </li>
+                   
+                   <!-- Next -->
                     <!-- quando l'utente clicca su next viene richiamta la funzione getAxiosCall che in base alla currentPaginationPage permette di andare avanti -->
-                
-                    <li class="page-item" @click="getAxiosCall(currentPaginationPage + 1)">
+                    <!-- assegno una classe dinamica così da attivare la classe disabled solo quando lapagina corrente è uguale all'ultima pagina  -->
+                    <li class="page-item" @click="getAxiosCall(currentPaginationPage + 1)" :class="{'disabled' : currentPaginationPage == lastPaginationPage}">
                         <a class="page-link" href="#">Next</a>
                     </li>
                 </ul>
             </nav>
         </div>
 
-       
+       <!-- :class="{'disabled' : currentPaginationPage == lastPaginationPage} -->
     </main>
 </template>
 
@@ -53,7 +58,6 @@ export default {
             currentPaginationPage: 1,
             // ultima pagina
             lastPaginationPage: null
-
 
         }
     },
@@ -88,7 +92,8 @@ export default {
             //chiamata per assegnare il vlore di current_page a currentPaginationPage
             this.currentPaginationPage = response.data.results.current_page
             // chiamata per assegnare il valore di last_page a lastPaginationPage
-            THIS.lastPaginationPage = response.data.results.last_page
+            this.lastPaginationPage = response.data.results.last_page
+            console.log(this.lastPaginationPage)
            
         
         });
