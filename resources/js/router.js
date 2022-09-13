@@ -30,5 +30,7 @@ const router = new VueRouter ({
         },
     ]
 })
+// inserisco la stringa export default a fine pagina per permettere l'utilizo di app.js
+export default router;
 
 
