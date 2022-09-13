@@ -1,6 +1,6 @@
 <template>
     <main>
-        <h1>{{pageTitle}}</h1>
+        <h2>{{pageTitle}}</h2>
         <div class="container">
             <div class="row row-cols-3">
                     <!-- eseguo ciclo v-for dell'array posts, e assegno come chiave univoca l'id di ogni post -->
@@ -17,24 +17,25 @@
            </div>
 
             <!-- paginazione -->
-            <nav aria-label="Page navigation example">
+            <nav class="mt-3">
                 <ul class="pagination">
                     <!-- Preview -->
                     <!-- nel caso in cui ci troviamo alla prima pagina inseriamo una classe dinamica che impedisca di poter tornare indietro -->
-                    <li class="page-item" @click="getAxiosCall(currentPaginationPage - 1)" :class="{'disabled' : currentPaginationPage == 1}">
+                    <li class="page-item" @click.prevent="getAxiosCall(currentPaginationPage - 1)" :class="{'disabled' : currentPaginationPage == 1}">
                         <a class="page-link" href="#">Previous</a>
                     </li>
 
                     <!-- pagination number -->
-                    <li class="page-item" v-for="pageNumber in lastPaginationPage" :key="pageNumber">
+                    <li class="page-item" v-for="pageNumber in lastPaginationPage" :key="pageNumber" :class="{ 'active' : pageNumber == currentPaginationPage }">
                         <!-- richiamo la funzione che esegue la chiamata Axios e gli passo come argomento il numero di pagine per permmetere all'utente di navigare tra le pagine -->
-                        <a @click="getAxiosCall(pageNumber)" class="page-link" href="#">{{pageNumber}}</a>
+                        <!-- asegno una classe dinamica che permette di avere la classe active solo se pageNumber = current_page -->
+                        <a @click.prevent="getAxiosCall(pageNumber)" class="page-link" href="#" >{{pageNumber}}</a>
                     </li>
                    
                    <!-- Next -->
                     <!-- quando l'utente clicca su next viene richiamta la funzione getAxiosCall che in base alla currentPaginationPage permette di andare avanti -->
                     <!-- assegno una classe dinamica così da attivare la classe disabled solo quando lapagina corrente è uguale all'ultima pagina  -->
-                    <li class="page-item" @click="getAxiosCall(currentPaginationPage + 1)" :class="{'disabled' : currentPaginationPage == lastPaginationPage}">
+                    <li class="page-item" @click.prevent="getAxiosCall(currentPaginationPage + 1)" :class="{'disabled' : currentPaginationPage == lastPaginationPage}">
                         <a class="page-link" href="#">Next</a>
                     </li>
                 </ul>
