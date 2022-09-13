@@ -20,6 +20,25 @@
 
 <script>
 export default {
-    name: 'SharedHeader'
+    name: 'SharedHeader',
+    data(){
+        return{
+            // creo un array di oggeti per i link di navigazione così da poterli stampare tramite un v-for, inserisco in ogni oggetto le caratteristiche così da poter stampare quello che mi serve
+            maenuLinks: [
+                {
+                    name: 'home',
+                    label:'Home'
+                },
+                {
+                    name: 'about',
+                    label:'About'
+                },
+                {
+                    name: 'blog',
+                    label:'Blog'
+                },
+            ]
+        }
+    }
 }
 </script>

@@ -1909,7 +1909,22 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'SharedHeader'
+  name: 'SharedHeader',
+  data: function data() {
+    return {
+      // creo un array di oggeti per i link di navigazione così da poterli stampare tramite un v-for, inserisco in ogni oggetto le caratteristiche così da poter stampare quello che mi serve
+      maenuLinks: [{
+        name: 'home',
+        label: 'Home'
+      }, {
+        name: 'about',
+        label: 'About'
+      }, {
+        name: 'blog',
+        label: 'Blog'
+      }]
+    };
+  }
 });
 
 /***/ }),
