@@ -1,11 +1,18 @@
 <template>
     <div>
-        <h1>Ciao sono Blog</h1>
+        <h1>I nostri posts</h1>
+        <Posts /> 
     </div>
 </template>
 
 <script>
+// importo Posts
+import Posts from '../components/Posts.vue'
+
 export default {
     name: 'BlogPage',
+    components: {
+        Posts
+    }
 }
 </script>
