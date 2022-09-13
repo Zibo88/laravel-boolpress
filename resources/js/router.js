@@ -12,6 +12,8 @@ import BlogPage from './pages/BlogPage.vue';
 
 // Regole delle rotte
 const router = new VueRouter ({
+    // inserisco la modalità hystory per eliminare il comporamento del cancelletto nell'url
+    mode: 'history',
     routes: [
         {
             path : '/',

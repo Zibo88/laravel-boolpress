@@ -53370,6 +53370,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
  // Regole delle rotte
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
+  // inserisco la modalità hystory per eliminare il comporamento del cancelletto nell'url
+  mode: 'history',
   routes: [{
     path: '/',
     name: 'home',
