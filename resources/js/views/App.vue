@@ -7,8 +7,9 @@
 </template>
 
 <script >
-// importo il componente in app.vue
-import Posts from '../components/Posts.vue';
+// importo i componenti in app.vue
+import SharedHeader from '../components/SharedHeader.vue'
+
 
 export default {
    name: 'App',
