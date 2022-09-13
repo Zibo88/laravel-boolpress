@@ -31,12 +31,16 @@ window.Vue = require('vue');
  window.axios = require('axios')
  window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+// import router from './router';
 // importo app vue come componente principale
-import App from './views/App.vue' 
-;
+import App from './views/App.vue';
+
+// importo il file router.js
+import router from './router.js'
+
 const app = new Vue({
     el: '#root',
-
     // avvia come primo componente vue 
-    render: h=> h(App)
+    render: h => h(App),
+    router
 });
