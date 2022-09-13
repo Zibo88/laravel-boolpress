@@ -9,6 +9,7 @@ Vue.use(VueRouter);
 import HomePage from './pages/HomePage.vue';
 import AboutPage from './pages/AboutPage.vue';
 import BlogPage from './pages/BlogPage.vue';
+import NotFound from './pages/NotFound.vue';
 
 // Regole delle rotte
 const router = new VueRouter ({
@@ -30,6 +31,11 @@ const router = new VueRouter ({
             name: 'blog',
             component: BlogPage
         },
+        {
+            path : '*/',
+            name: 'not-found',
+            component: NotFound
+        }
     ]
 })
 // inserisco la stringa export default a fine pagina per permettere l'utilizo di app.js
