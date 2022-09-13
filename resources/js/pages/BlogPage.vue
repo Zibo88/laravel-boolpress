@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <h1>I nostri posts</h1>
         <Posts /> 
     </div>
