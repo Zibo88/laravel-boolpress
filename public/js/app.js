@@ -2343,7 +2343,15 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("h1", [_vm._v("Non ci sono contenuti")]);
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("h1", [_vm._v("Non ci sono contenuti")]), _vm._v(" "), _c("div", [_vm._v(" Visita la nostra "), _c("router-link", {
+    attrs: {
+      to: {
+        name: "home"
+      }
+    }
+  }, [_vm._v(" Home ")])], 1)]);
 };
 
 var staticRenderFns = [];
