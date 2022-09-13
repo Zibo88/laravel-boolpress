@@ -7,9 +7,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item">
+            <!-- eseguo un ciclo v-for per stampare il contenuto dell'array di oggetti menuLinks -->
+            <li v-for="link, index in menuLinks" :key="index" class="nav-item">
                     <!-- assegno alla <li> router-link così da creare un collegamento che mostri i contenuti della pagina con name: home (regola delle route) -->
-                <router-link :to="{name: 'home'}"  class='nav-link'>Home</router-link>
+                <router-link :to="{name: link.name}"  class='nav-link'>{{link.label}}</router-link>
             </li>
         </ul>
     </div>
@@ -24,7 +25,7 @@ export default {
     data(){
         return{
             // creo un array di oggeti per i link di navigazione così da poterli stampare tramite un v-for, inserisco in ogni oggetto le caratteristiche così da poter stampare quello che mi serve
-            maenuLinks: [
+            menuLinks: [
                 {
                     name: 'home',
                     label:'Home'

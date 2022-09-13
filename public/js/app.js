@@ -1913,7 +1913,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       // creo un array di oggeti per i link di navigazione così da poterli stampare tramite un v-for, inserisco in ogni oggetto le caratteristiche così da poter stampare quello che mi serve
-      maenuLinks: [{
+      menuLinks: [{
         name: 'home',
         label: 'Home'
       }, {
@@ -2022,16 +2022,19 @@ var render = function render() {
     }
   }, [_c("ul", {
     staticClass: "navbar-nav"
-  }, [_c("li", {
-    staticClass: "nav-item"
-  }, [_c("router-link", {
-    staticClass: "nav-link",
-    attrs: {
-      to: {
-        name: "home"
+  }, _vm._l(_vm.menuLinks, function (link, index) {
+    return _c("li", {
+      key: index,
+      staticClass: "nav-item"
+    }, [_c("router-link", {
+      staticClass: "nav-link",
+      attrs: {
+        to: {
+          name: link.name
+        }
       }
-    }
-  }, [_vm._v("Home")])], 1)])])])])]);
+    }, [_vm._v(_vm._s(link.label))])], 1);
+  }), 0)])])])]);
 };
 
 var staticRenderFns = [function () {
