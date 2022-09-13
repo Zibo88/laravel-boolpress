@@ -2045,6 +2045,11 @@ var render = function render() {
       staticClass: "page-link",
       attrs: {
         href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.getAxiosCall(pageNumber);
+        }
       }
     }, [_vm._v(_vm._s(pageNumber))])]);
   }), _vm._v(" "), _c("li", {

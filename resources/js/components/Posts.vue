@@ -27,7 +27,8 @@
 
                     <!-- pagination number -->
                     <li class="page-item" v-for="pageNumber in lastPaginationPage" :key="pageNumber">
-                        <a class="page-link" href="#">{{pageNumber}}</a>
+                        <!-- richiamo la funzione che esegue la chiamata Axios e gli passo come argomento il numero di pagine per permmetere all'utente di navigare tra le pagine -->
+                        <a @click="getAxiosCall(pageNumber)" class="page-link" href="#">{{pageNumber}}</a>
                     </li>
                    
                    <!-- Next -->
