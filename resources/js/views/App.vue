@@ -1,8 +1,14 @@
 <template>
-    <main>  
+    <div>
+        <header>
+            <SharedHeader />
+        </header>
+        <main>  
             <!-- utilizzo router-view così da poter stampare i contenuti di ogni singola pagina, funziona un po come lo @yield -->
-       <router-view></router-view>
-    </main>
+        <router-view></router-view>
+        </main>
+    </div>
+   
     
 </template>
 
