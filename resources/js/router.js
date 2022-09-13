@@ -4,11 +4,31 @@ import VueRouter from 'vue-router';
 			
 Vue.use(VueRouter);
 
-// Regole delle rotte
+
 // importo le pagine
 import HomePage from './pages/HomePage.vue';
 import AboutPage from './pages/AboutPage.vue';
 import BlogPage from './pages/BlogPage.vue';
 
+// Regole delle rotte
+const router = new VueRouter ({
+    routes: [
+        {
+            path : '/',
+            name: 'home',
+            component: HomePage
+        },
+        {
+            path : '/about',
+            name: 'about',
+            component: AboutPage
+        },
+        {
+            path : '/blog',
+            name: 'blog',
+            component: BlogPage
+        },
+    ]
+})
 
 
