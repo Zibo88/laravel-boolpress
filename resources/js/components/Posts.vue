@@ -1,7 +1,7 @@
 <template>
     <main>
-        <h2>{{pageTitle}}</h2>
         <div class="container">
+            <h2>{{PostsPageTitle}}</h2>
             <div class="row row-cols-3">
                     <!-- eseguo ciclo v-for dell'array posts, e assegno come chiave univoca l'id di ogni post -->
                     <div v-for="post in posts" :key="post.id" class="col">
@@ -53,7 +53,7 @@ export default {
     name: 'Posts',
     data(){
         return{
-            pageTitle: 'Ciao sono Posts',
+            PostsPageTitle: 'Ciao sono Posts',
             // array vuoto per inserire i dati dalla chiamata axios
             posts: [],
             // pagina corrente

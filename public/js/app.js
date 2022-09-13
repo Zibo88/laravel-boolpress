@@ -1913,7 +1913,7 @@ __webpack_require__.r(__webpack_exports__);
   name: 'Posts',
   data: function data() {
     return {
-      pageTitle: 'Ciao sono Posts',
+      PostsPageTitle: 'Ciao sono Posts',
       // array vuoto per inserire i dati dalla chiamata axios
       posts: [],
       // pagina corrente
@@ -1999,9 +1999,9 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("main", [_c("h2", [_vm._v(_vm._s(_vm.pageTitle))]), _vm._v(" "), _c("div", {
+  return _c("main", [_c("div", {
     staticClass: "container"
-  }, [_c("div", {
+  }, [_c("h2", [_vm._v(_vm._s(_vm.PostsPageTitle))]), _vm._v(" "), _c("div", {
     staticClass: "row row-cols-3"
   }, _vm._l(_vm.posts, function (post) {
     return _c("div", {
