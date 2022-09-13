@@ -1974,7 +1974,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'App',
   //creo la lista dei componenti che verranno importati in app.vue
-  components: {}
+  components: {
+    SharedHeader: _components_SharedHeader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
 });
 
 /***/ }),

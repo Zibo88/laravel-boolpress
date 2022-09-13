@@ -15,7 +15,8 @@ export default {
    name: 'App',
     //creo la lista dei componenti che verranno importati in app.vue
     components: {
-       
+       SharedHeader,
+
     }
 
 }
