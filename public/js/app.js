@@ -2022,9 +2022,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'App',
   //creo la lista dei componenti che verranno importati in app.vue
-  components: {
-    Posts: _components_Posts_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
+  components: {}
 });
 
 /***/ }),
@@ -2227,7 +2225,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("main", [_c("h1", [_vm._v(" ciao sono app vue ")]), _vm._v(" "), _c("Posts")], 1);
+  return _c("main", [_c("router-view")], 1);
 };
 
 var staticRenderFns = [];

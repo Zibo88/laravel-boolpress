@@ -1,8 +1,7 @@
 <template>
     <main>  
-        <h1> ciao sono app vue </h1>
-        <!-- utilizzo posts.vue -->
-        <Posts/>
+            <!-- utilizzo router-view così da poter stampare i contenuti di ogni singola pagina, funziona un po come lo @yield -->
+       <router-view></router-view>
     </main>
     
 </template>
@@ -15,7 +14,7 @@ export default {
    name: 'App',
     //creo la lista dei componenti che verranno importati in app.vue
     components: {
-        Posts
+       
     }
 
 }
