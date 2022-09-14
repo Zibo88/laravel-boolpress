@@ -9,6 +9,12 @@
 <script>
 export default {
     name:'SinglePost',
+    data(){
+        return{
+            // variabile che servirà per salvare i dati
+            post: null
+        }
+    },
     // eseguo la chiamata axios tramite l'api creata 
     mounted() {
         // aggiungo all'url $route.params.slug, dove sono appunto tutti i dati e lo slug
