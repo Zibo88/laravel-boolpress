@@ -7,6 +7,9 @@
             <div v-if="post.category">
                 Categoria: {{post.category.name}}
             </div>
+            <div>
+                <span  class="badge bg-primary">New</span>
+            </div>
                
             <p>{{post.content}}</p>
         </div>
