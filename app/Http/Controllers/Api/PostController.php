@@ -39,5 +39,8 @@ class PostController extends Controller
             'success' => true,
             'post' => $post
         ];
+
+        // espongo i dati in formto json
+        return response()->json($data);
    }
 }
