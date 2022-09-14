@@ -41,7 +41,7 @@ class PostController extends Controller
         if($post){
             $data = [
                 'success' => true,
-                'post' => $post
+                'results' => $post
             ];
         }else{
             $data = [
