@@ -3,6 +3,11 @@
         <!-- stampo gli elementi solo se post non è NULL -->
         <div v-if="post">
             <h1>{{post.title}}</h1>
+            <!-- stampo la categoria solo se post.category non è NULL -->
+            <div v-if="post.category">
+                Categoria: {{post.category.name}}
+            </div>
+               
             <p>{{post.content}}</p>
         </div>
     </div>
