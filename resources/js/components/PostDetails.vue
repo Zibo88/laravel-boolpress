@@ -12,6 +12,10 @@
 
 <script>
 export default {
-    name:'PostDetails'
+    name:'PostDetails',
+    // la nostra card ha necessità di post per poter lavorare
+    props:{
+        post: Object,
+    }
 }
 </script>
