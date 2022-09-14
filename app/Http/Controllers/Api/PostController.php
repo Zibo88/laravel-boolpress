@@ -32,7 +32,8 @@ class PostController extends Controller
         // dd($slug);
 
         // ricerco attraverso il Model tutti i post che hanno 'slug' uguale alla variabile passata come argomento
-        $post = Post::where('slug', '=', $slug)->first();
+        // per permettere una join tra i post e itags e le categorie utilizziamo ->with(['']), così che ogni post abbia la sua categoria e i suoi post
+        $post = Post::where('slug', '=', $slug)->with(['tags', 'category'])->first();
         
         // passo i dati a $data
         $data = [
