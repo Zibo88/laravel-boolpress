@@ -42,9 +42,16 @@
 
 
 <script>
+
+// importo il componente
+import PostDetails from './PostDetails.vue';
+
 // assegno il name al componenete
 export default {
     name: 'Posts',
+    components:{
+        PostDetails
+    },
     data(){
         return{
             PostsPageTitle: 'Ciao sono Posts',
@@ -57,7 +64,6 @@ export default {
 
         }
     },
-
     methods: {
        
 
