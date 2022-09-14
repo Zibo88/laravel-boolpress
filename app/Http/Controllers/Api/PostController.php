@@ -26,6 +26,7 @@ class PostController extends Controller
 
    }
 
+   // costruzione chiamata API
 //    passo come argomento alla funzione $slug che fungerà da chiave univoca
    public function show($slug){
     //    controllo se leggo lo slug dall'url
