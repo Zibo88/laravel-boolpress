@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage.vue';
 import AboutPage from './pages/AboutPage.vue';
 import BlogPage from './pages/BlogPage.vue';
 import NotFound from './pages/NotFound.vue';
+import SinglePost from './pages/SinglePost.vue';
 
 // Regole delle rotte
 const router = new VueRouter ({
@@ -31,6 +32,7 @@ const router = new VueRouter ({
             name: 'blog',
             component: BlogPage
         },
+     
         {
             path : '*/',
             name: 'not-found',
