@@ -1,5 +1,9 @@
 <template>
-    <h1>single post</h1>
+<div>
+    <!-- leggo lo slug dall'url -->
+    {{$route.params.slug}}
+</div>
+    
 </template>
 
 <script>
