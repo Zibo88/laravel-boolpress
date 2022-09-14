@@ -5,7 +5,8 @@
             <div class="row row-cols-3">
                     <!-- eseguo ciclo v-for dell'array posts, e assegno come chiave univoca l'id di ogni post -->
                     <div v-for="post in posts" :key="post.id" class="col">
-                       
+                        <!-- utilizzo il componente passando tramite la :props=l'oggetto -->
+                       <PostDetails :post = post />
                     </div>
             </div>
           

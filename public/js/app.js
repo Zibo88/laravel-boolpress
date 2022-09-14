@@ -2203,7 +2203,11 @@ var render = function render() {
     return _c("div", {
       key: post.id,
       staticClass: "col"
-    });
+    }, [_c("PostDetails", {
+      attrs: {
+        post: post
+      }
+    })], 1);
   }), 0), _vm._v(" "), _c("nav", {
     staticClass: "mt-3"
   }, [_c("ul", {
