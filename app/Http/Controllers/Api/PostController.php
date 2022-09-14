@@ -26,8 +26,8 @@ class PostController extends Controller
 
    }
 
-
-   public function show(){
-        dd('ciao sono show');
+//    passo come argomento alla funzione $slug che fungerà da chiave univoca
+   public function show($slug){
+        dd($slug);
    }
 }
