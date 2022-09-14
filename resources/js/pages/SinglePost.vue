@@ -1,8 +1,11 @@
 <template>
-<div>
-    <!-- leggo lo slug dall'url -->
-    {{$route.params.slug}}
-</div>
+    <div class="container">
+        <!-- stampo gli elementi solo se post non è NULL -->
+        <div v-if="post">
+            <h1>{{post.title}}</h1>
+            <p>{{post.content}}</p>
+        </div>
+    </div>
     
 </template>
 
