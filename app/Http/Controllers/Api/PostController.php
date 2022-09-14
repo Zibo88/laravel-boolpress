@@ -36,10 +36,18 @@ class PostController extends Controller
         $post = Post::where('slug', '=', $slug)->with(['tags', 'category'])->first();
         
         // passo i dati a $data
-        $data = [
-            'success' => true,
-            'post' => $post
-        ];
+        // inserisco una if così da stampare $data solo se post non è NULL
+        if($post){
+            $data = [
+                'success' => true,
+                'post' => $post
+            ];
+        }else{
+            $data = [
+                'success' => false,
+            ];
+        }
+       
 
         // espongo i dati in formto json
         return response()->json($data);
