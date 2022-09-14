@@ -28,6 +28,16 @@ class PostController extends Controller
 
 //    passo come argomento alla funzione $slug che fungerà da chiave univoca
    public function show($slug){
-        dd($slug);
+    //    controllo se leggo lo slug dall'url
+        // dd($slug);
+
+        // ricerco attraverso il Model tutti i post che hanno 'slug' uguale alla variabile passata come argomento
+        $post = Post::where('slug', '=', $slug)->first();
+        
+        // passo i dati a $data
+        $data = [
+            'success' => true,
+            'post' => $post
+        ];
    }
 }
