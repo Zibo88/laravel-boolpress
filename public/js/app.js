@@ -1923,15 +1923,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    // funzione per tagliare il testo del content
-    cutText: function cutText(text) {
-      // se la lunghezza del text è superiore a 40 caratteri torna il text con slice, altrimenti torna text normale
-      if (text.length > 40) {
-        return text.slice(0, 40) + '...';
-      }
-
-      return text;
-    },
     // funzione per la chiamata axios
     // assegno un parametro alla funzione
     getAxiosCall: function getAxiosCall(pageNumber) {
@@ -2135,7 +2126,7 @@ var render = function render() {
       key: post.id,
       staticClass: "col"
     });
-  }), 0)]), _vm._v(" "), _c("nav", {
+  }), 0), _vm._v(" "), _c("nav", {
     staticClass: "mt-3"
   }, [_c("ul", {
     staticClass: "pagination"
@@ -2190,7 +2181,7 @@ var render = function render() {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("Next")])])], 2)])]);
+  }, [_vm._v("Next")])])], 2)])])]);
 };
 
 var staticRenderFns = [];

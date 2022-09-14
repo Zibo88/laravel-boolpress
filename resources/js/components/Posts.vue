@@ -7,8 +7,8 @@
                     <div v-for="post in posts" :key="post.id" class="col">
                        
                     </div>
-                </div>
-           </div>
+            </div>
+          
 
             <!-- paginazione -->
             <nav class="mt-3">
@@ -59,16 +59,7 @@ export default {
     },
 
     methods: {
-        // funzione per tagliare il testo del content
-        cutText(text){
-            // se la lunghezza del text è superiore a 40 caratteri torna il text con slice, altrimenti torna text normale
-            if(text.length > 40){
-                return text.slice(0, 40) + '...'
-            }
-
-            return text
-  
-        },
+       
 
         // funzione per la chiamata axios
         // assegno un parametro alla funzione

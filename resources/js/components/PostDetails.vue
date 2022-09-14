@@ -16,6 +16,18 @@ export default {
     // la nostra card ha necessità di post per poter lavorare
     props:{
         post: Object,
+    },
+    methods: {
+         // funzione per tagliare il testo del content
+        cutText(text){
+            // se la lunghezza del text è superiore a 40 caratteri torna il text con slice, altrimenti torna text normale
+            if(text.length > 40){
+                return text.slice(0, 40) + '...'
+            }
+
+            return text
+  
+        },
     }
 }
 </script>
