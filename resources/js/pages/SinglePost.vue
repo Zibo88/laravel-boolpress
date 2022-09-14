@@ -7,8 +7,10 @@
             <div v-if="post.category">
                 Categoria: {{post.category.name}}
             </div>
-            <div>
-                <span  class="badge bg-primary">New</span>
+            <!-- stampo i tag solo se la loro lunghezza è maggiore di 0 -->
+            <div v-if="post.tags.length > 0">
+                <!-- eseguo il ciclo v-for dei tag in post.tags -->
+                <span v-for="tag in post.tags" :key="tag.id"  class="badge bg-primary mr-2">{{tag.name}}</span>
             </div>
                
             <p>{{post.content}}</p>
