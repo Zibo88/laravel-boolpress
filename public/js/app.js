@@ -2134,25 +2134,7 @@ var render = function render() {
     return _c("div", {
       key: post.id,
       staticClass: "col"
-    }, [_c("div", {
-      staticClass: "card mt-4"
-    }, [_c("div", {
-      staticClass: "card-body"
-    }, [_c("h5", {
-      staticClass: "card-title"
-    }, [_vm._v(_vm._s(post.title))]), _vm._v(" "), _c("p", {
-      staticClass: "card-text"
-    }, [_vm._v(_vm._s(_vm.cutText(post.content)))]), _vm._v(" "), _c("router-link", {
-      staticClass: "btn btn-primary",
-      attrs: {
-        to: {
-          name: "single-post",
-          params: {
-            slug: post.slug
-          }
-        }
-      }
-    }, [_vm._v(" Leggi ")])], 1)])]);
+    });
   }), 0)]), _vm._v(" "), _c("nav", {
     staticClass: "mt-3"
   }, [_c("ul", {
