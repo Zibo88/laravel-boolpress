@@ -31,7 +31,7 @@ class PostController extends Controller
     {   
 
         // richiamo il Model e gli chiedo tutto il database
-        $posts = Post::paginate(3);
+        $posts = Post::paginate(6);
         // controllo 
         // dd($posts)
         // invio i dati alla view admin.posts.index
