@@ -20,7 +20,9 @@ export default {
         // aggiungo all'url $route.params.slug, dove sono appunto tutti i dati e lo slug
         axios.get('/api/posts/' + this.$route.params.slug )
         .then((response)=>{
-            console.log(response);
+            // assegno i dati a post
+            this.post = response.data.results
+        //    console.log(this.post)
         })
     }
 }
