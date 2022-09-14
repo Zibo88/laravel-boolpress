@@ -2153,7 +2153,7 @@ var render = function render() {
         }
       }
     }, [_vm._v(" Leggi ")])], 1)])]);
-  }), 0), _vm._v(" "), _c("nav", {
+  }), 0)]), _vm._v(" "), _c("nav", {
     staticClass: "mt-3"
   }, [_c("ul", {
     staticClass: "pagination"
@@ -2208,7 +2208,7 @@ var render = function render() {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("Next")])])], 2)])])]);
+  }, [_vm._v("Next")])])], 2)])]);
 };
 
 var staticRenderFns = [];
