@@ -53783,6 +53783,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'blog',
     component: _pages_BlogPage_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
+    path: '/blog/:slug',
+    name: 'single-post',
+    component: _pages_SinglePost_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }, {
     path: '*/',
     name: 'not-found',
     component: _pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_5__["default"]

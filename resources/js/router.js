@@ -32,7 +32,11 @@ const router = new VueRouter ({
             name: 'blog',
             component: BlogPage
         },
-     
+        {
+            path: '/blog/:slug',
+            name: 'single-post',
+            component: SinglePost
+        },
         {
             path : '*/',
             name: 'not-found',
