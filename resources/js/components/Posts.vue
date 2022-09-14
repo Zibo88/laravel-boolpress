@@ -10,7 +10,8 @@
                         <div class="card-body">
                             <h5 class="card-title">{{post.title}}</h5>
                             <p class="card-text">{{cutText(post.content)}}</p>
-                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            <!-- inserisco un link di collegamento che porta l'utente alla pagina con i maggiori dettagli -->
+                            <router-link class="btn btn-primary" :to="{name: 'single-post',params: {slug: post.slug}}"> Leggi </router-link>
                         </div>
                     </div>
                 </div>
