@@ -2108,8 +2108,17 @@ __webpack_require__.r(__webpack_exports__);
 
     // aggiungo all'url $route.params.slug, dove sono appunto tutti i dati e lo slug
     axios.get('/api/posts/' + this.$route.params.slug).then(function (response) {
-      // assegno i dati a post
-      _this.post = response.data.results; //    console.log(this.post)
+      // se la chiamata al database va a buon fine
+      if (response.data.success) {
+        // assegno i dati a post
+        _this.post = response.data.results;
+      } else {
+        // Altrimenti, se non va a buon fine, reindirizza l'utente alla pagina con name: not-found, quando assegno una rotta scrivi router
+        _this.$router.push({
+          name: 'not-found'
+        });
+      } //    console.log(this.post)
+
     });
   }
 });
