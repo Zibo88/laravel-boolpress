@@ -2478,7 +2478,7 @@ var render = function render() {
       key: tag.id,
       staticClass: "badge bg-primary mr-2"
     }, [_vm._v(_vm._s(tag.name))]);
-  }), 0) : _vm._e(), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.post.content))])]) : _vm._e()]);
+  }), 0) : _vm._e(), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.post.content))])]) : _c("div", [_vm._v("Loading")])]);
 };
 
 var staticRenderFns = [];

@@ -15,6 +15,9 @@
                
             <p>{{post.content}}</p>
         </div>
+
+        <!-- finchè non carica mostra Loading -->
+        <div v-else>Loading</div>
     </div>
     
 </template>
