@@ -83,7 +83,7 @@ class PostController extends Controller
         // creo nuova riga richiamando il model
         $new_post = new Post();
 
-        // assegno i valori del form al fillable del model (in questo caso inseriamo titolo e contenuto)
+        // assegno i valori del form al fillable del model 
         $new_post->fill($form_data);
         // dd($new_post);
 
