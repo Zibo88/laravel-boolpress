@@ -14,6 +14,15 @@ class PostController extends Controller
     // chiedo al model di mostrare 6 elementi per pagina
     $posts = Post::paginate(6);
 
+    // eseguo un ciclo foreach nel controller api così da assegnare ad ogni elemento dei posts l'url assoluto solo se post->cover esiste
+    foreach($posts as $post){
+        if($post->cover){
+            $post->cover = asset('storage/' . $post->cover);	
+        }
+    }
+
+
+
     // passo i dati
     $data = [
         'success' => true,
