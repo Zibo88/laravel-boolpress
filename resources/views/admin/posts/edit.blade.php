@@ -64,9 +64,16 @@
         {{-- aggiunta di old alla value, se c'è il titolo stampalo altrimenti stampa il titolo che c'era prima --}}
         <input type="text" class="form-control" id="title" name="title" value="{{old ('title', $post->title )}}">
     </div>
+
     <div class="mb-3">
         <label for="content" class="form-label">Contenuto</label>
         <textarea class="form-control" id="content" rows="3" name="content">{{old ('content', $post->content )}}</textarea>
+    </div>
+
+     {{-- Input file --}}
+     <div class="mb-3">
+        <label for="image" class="form-label">Inserisci un'immagine</label>
+        <input class="form-control" type="file" id="image" name="image">
     </div>
 
     <input type="submit" value="Invia">
