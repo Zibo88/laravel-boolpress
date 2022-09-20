@@ -74,6 +74,8 @@
      <div class="mb-3">
         <label for="image" class="form-label">Inserisci un'immagine</label>
         <input class="form-control" type="file" id="image" name="image">
+        {{-- mostro la foto precedentemente caricata --}}
+        <img src="{{asset('storage/' . $post->cover)}}" alt="{{ $post->title }}">
     </div>
 
     <input type="submit" value="Invia">
