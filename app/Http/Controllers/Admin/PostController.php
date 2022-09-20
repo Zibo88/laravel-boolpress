@@ -78,10 +78,16 @@ class PostController extends Controller
         // validazione 
 		$request->validate ($this->getValidation());	
         
-     
-
         // leggo i dati provenienti dal form
         $form_data = $request->all();
+
+        // se form_data['image'] è settato
+        if(isset($form_data['image'])) {
+            // salvo il path dell'immagine proveninete dal form attraverso la classe Storage all'interno della cartella post-covers
+            $img_path = Storage::put('post-covers', $form_data['image']);
+            dd($img_path);
+            
+        }
        
         // creo nuova riga richiamando il model
         $new_post = new Post();
