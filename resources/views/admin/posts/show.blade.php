@@ -5,7 +5,7 @@
     <h1>Titolo: {{ $post->title }} </h1>
     {{-- se la colonna post cover esiste stampa l'immagine prendendola dall'url assoluto presente nella colonna post->cover --}}
     @if ($post->cover)
-       <img class="w-60" src="{{asset('storage/' . $post->cover)}}" alt="{{ $post->title }}">
+       <img src="{{asset('storage/' . $post->cover)}}" alt="{{ $post->title }}">
     @endif
     {{-- stampo i dati relativi alla creazione e modifica del post --}}
     <div> Creato il: {{$post->created_at->format('d - F - Y')}}</div>
