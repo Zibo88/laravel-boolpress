@@ -242,8 +242,16 @@ class PostController extends Controller
         // richiamo tutti i post tramite il model analizzandoli per id
         $post_to_delete = Post::FindOrFail($id);
 
+        // se il post da cancellare ha una colonna cover popolata
+        if($post_to_delete->cover){
+            // elimina dallo storage il la colonna cover collegata a quel post
+            Storage::delete($post_to_delete->cover);
+        }
+       
+
         // eseguo la cancellazione della relazione, prima di eliminare il post
         $post_to_delete->tags()->sync([]);
+
 
         // eseguo la cancellazione
         $post_to_delete->delete();
