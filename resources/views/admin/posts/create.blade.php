@@ -61,6 +61,12 @@
             <textarea class="form-control" id="content" rows="3" name="content" value="">{{old('content')}}</textarea>
         </div>
 
+        {{-- Input file --}}
+        <div class="mb-3">
+            <label for="image" class="form-label">Inserisci un'immagine</label>
+            <input class="form-control" type="file" id="image" name="image">
+        </div>
+
         <input type="submit" value="Salva">
     </form>
 
