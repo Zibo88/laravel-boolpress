@@ -12,7 +12,7 @@
         </div>
     @endif
 {{-- modifico la route in modo tale che trasferisca i dati raccolti dal form ad Update --}}
-<form action="{{route ('admin.posts.update' , ['post' => $post->id])}}" method="post">
+<form action="{{route ('admin.posts.update' , ['post' => $post->id])}}" method="post" enctype="multipart/form-data">
 
     @csrf
     {{-- dato che update riceve i dati con il metodo PUT inserirò: --}}
