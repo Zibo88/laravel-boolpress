@@ -190,6 +190,15 @@ class PostController extends Controller
         // richiamo il model e definisco l'id del post che vogliamo modificare
         $post_to_update = Post::FindOrFail($id);
 
+        // se form_data['image'] è settato(quindi continene una foto), 
+        if(isset($form_data['image'])) {
+            // Se il post da aggiornare ha una colonna cover associata
+            if($post_to_update->cover) {
+                // Cancello dal disco l'immagine vecchia
+                Storage::delete($post_to_update->cover);
+            }
+        }
+
         // se il nuovo titolo è diverso dal vecchio titolo
         if($form_data['title'] !== $post_to_update->title){
              // compilazione dello slug
