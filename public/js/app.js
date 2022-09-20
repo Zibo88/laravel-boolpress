@@ -2168,7 +2168,13 @@ var render = function render() {
     staticClass: "card-body"
   }, [_c("h5", {
     staticClass: "card-title"
-  }, [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("p", {
+  }, [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _vm.post.cover ? _c("img", {
+    staticClass: "w-100",
+    attrs: {
+      src: _vm.post.cover,
+      alt: _vm.post.title
+    }
+  }) : _vm._e(), _vm._v(" "), _c("p", {
     staticClass: "card-text"
   }, [_vm._v(_vm._s(_vm.cutText(_vm.post.content)))]), _vm._v(" "), _c("router-link", {
     staticClass: "btn btn-primary",

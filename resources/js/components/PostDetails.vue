@@ -3,6 +3,9 @@
         <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
             <h5 class="card-title">{{post.title}}</h5>
+            <!-- stampo le immagini per ogni singolo post in Blog -->
+            <img class="w-100" v-if="post.cover" :src="post.cover" :alt="post.title">
+
             <p class="card-text">{{cutText(post.content)}}</p>
             <!-- inserisco un link di collegamento che porta l'utente alla pagina con i maggiori dettagli -->
             <router-link class="btn btn-primary" :to="{name: 'single-post',params: {slug: post.slug}}"> Leggi </router-link>
