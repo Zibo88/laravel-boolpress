@@ -202,7 +202,8 @@ class PostController extends Controller
         // eseguo l'upload della nuova img dentro i la cartella post-covers
         $img_path = Storage::put('post-covers', $form_data['image']);
 
-
+        // assegno a form_data la colonna cover e gli assegno il valore del path
+        $form_data['cover'] = $img_path;
 
         // se il nuovo titolo è diverso dal vecchio titolo
         if($form_data['title'] !== $post_to_update->title){
