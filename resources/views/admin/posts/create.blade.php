@@ -14,7 +14,7 @@
 
     {{-- Definisco verso quale rotta il form deve inviare i dati (store()) e con quale metodo --}}
     {{-- Attraverso enctype=“multipart/form-data” autorizzo i form ad inviare dati sotto forma di file --}}
-    <form action="{{route ('admin.posts.store')}}" method="post" enctype=“multipart/form-data”>
+    <form action="{{route ('admin.posts.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
         {{-- select --}}
