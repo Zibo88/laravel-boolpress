@@ -85,7 +85,10 @@ class PostController extends Controller
         if(isset($form_data['image'])) {
             // salvo il path dell'immagine proveninete dal form attraverso la classe Storage all'interno della cartella post-covers
             $img_path = Storage::put('post-covers', $form_data['image']);
-            dd($img_path);
+            
+            // salvo i dati nel database indicando la colonna e il valore che dovrà avere nel database
+            $form_data['cover'] = $img_path;
+            
             
         }
        
