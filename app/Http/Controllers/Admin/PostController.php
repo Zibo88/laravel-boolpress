@@ -20,6 +20,10 @@ use App\Category;
 // importo il model dei tag
 use App\Tag;
 
+// importo la classe Storage per il salvataggio delle immagini provenienti dal form in una cartella in locale
+use Illuminate\Support\Facades\Storage;
+
+
 class PostController extends Controller
 {
     /**
@@ -79,7 +83,6 @@ class PostController extends Controller
         // leggo i dati provenienti dal form
         $form_data = $request->all();
        
-
         // creo nuova riga richiamando il model
         $new_post = new Post();
 
