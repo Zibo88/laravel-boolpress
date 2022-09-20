@@ -199,6 +199,11 @@ class PostController extends Controller
             }
         }
 
+        // eseguo l'upload della nuova img dentro i la cartella post-covers
+        $img_path = Storage::put('post-covers', $form_data['image']);
+
+
+
         // se il nuovo titolo è diverso dal vecchio titolo
         if($form_data['title'] !== $post_to_update->title){
              // compilazione dello slug
