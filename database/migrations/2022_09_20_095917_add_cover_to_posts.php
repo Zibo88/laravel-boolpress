@@ -14,7 +14,8 @@ class AddCoverToPosts extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            
+            // assegno le caratteristiche alla colonna
+            $table->string('cover', 255)->nullable()->after('slug');
         });
     }
 
@@ -26,7 +27,8 @@ class AddCoverToPosts extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-            //
+            // permetto la cancellazione della colonna appena aggiunta 
+            $table->dropColumn('cover');
         });
     }
 }
