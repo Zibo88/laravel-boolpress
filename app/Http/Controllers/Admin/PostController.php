@@ -88,8 +88,6 @@ class PostController extends Controller
             
             // salvo i dati nel database indicando la colonna e il valore che dovrà avere nel database
             $form_data['cover'] = $img_path;
-            
-            
         }
        
         // creo nuova riga richiamando il model
