@@ -2482,7 +2482,12 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "container"
-  }, [_vm.post ? _c("div", [_c("h1", [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _vm.post.category ? _c("div", [_vm._v("\n            Categoria: " + _vm._s(_vm.post.category.name) + "\n        ")]) : _vm._e(), _vm._v(" "), _vm.post.tags.length > 0 ? _c("div", _vm._l(_vm.post.tags, function (tag) {
+  }, [_vm.post ? _c("div", [_c("h1", [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _vm.post.cover ? _c("img", {
+    attrs: {
+      src: _vm.post.cover,
+      alt: _vm.post.title
+    }
+  }) : _vm._e(), _vm._v(" "), _vm.post.category ? _c("div", [_vm._v("\n            Categoria: " + _vm._s(_vm.post.category.name) + "\n        ")]) : _vm._e(), _vm._v(" "), _vm.post.tags.length > 0 ? _c("div", _vm._l(_vm.post.tags, function (tag) {
     return _c("span", {
       key: tag.id,
       staticClass: "badge bg-primary mr-2"

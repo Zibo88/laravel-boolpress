@@ -3,6 +3,10 @@
         <!-- stampo gli elementi solo se post non è NULL -->
         <div v-if="post">
             <h1>{{post.title}}</h1>
+            
+             <!-- stampo le post->cover solo se sono presenti e quindi non sono null -->
+            <img v-if="post.cover" :src="post.cover" :alt="post.title">
+
             <!-- stampo la categoria solo se post.category non è NULL -->
             <div v-if="post.category">
                 Categoria: {{post.category.name}}
