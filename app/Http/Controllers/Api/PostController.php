@@ -36,6 +36,12 @@ class PostController extends Controller
         // per permettere una join tra i post e itags e le categorie utilizziamo ->with(['']), così che ogni post abbia la sua categoria e i suoi post
         $post = Post::where('slug', '=', $slug)->with(['tags', 'category'])->first();
         
+        // modifico la chiamata API della show così da avere un url assoluto attraverso la funzione asset, così da poter stampare con VueJs
+        if($post->cover){
+            $post->cover = asset('storage/' . $post->cover);	
+        }
+    
+
         // passo i dati a $data
         // inserisco una if così da stampare $data solo se post non è NULL
         if($post){
