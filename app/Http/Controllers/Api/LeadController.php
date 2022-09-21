@@ -17,6 +17,9 @@ class LeadController extends Controller
         // dd($data);
         // assegno a $new_lead una nuova istanza di Lead
         $new_lead = new Lead();
+        // eseguo il mass-assignment tramite ->fill()
+		$new_lead->fill($data);
+
 
     }
 
