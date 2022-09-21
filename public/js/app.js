@@ -2441,12 +2441,63 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", {
-    staticClass: "container"
-  }, [_vm._v("\n    Contattaci\n")]);
+  return _vm._m(0);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "container"
+  }, [_vm._v("\n        Form di contatto\n        "), _vm._v(" "), _c("form", {
+    staticClass: "mt-3"
+  }, [_c("div", {
+    staticClass: "mb-3"
+  }, [_c("label", {
+    staticClass: "form-label",
+    attrs: {
+      "for": "user-name"
+    }
+  }, [_vm._v("Nome e Cognome")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "user-name"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "mb-3"
+  }, [_c("label", {
+    staticClass: "form-label",
+    attrs: {
+      "for": "user-email"
+    }
+  }, [_vm._v("Email")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "email",
+      id: "user-email"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "mb-3"
+  }, [_c("div", [_c("label", {
+    staticClass: "form-label",
+    attrs: {
+      "for": "user-message"
+    }
+  }, [_vm._v("Message")])]), _vm._v(" "), _c("textarea", {
+    attrs: {
+      id: "user-message",
+      cols: "100",
+      rows: "10"
+    }
+  })]), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "submit",
+      value: "Invia"
+    }
+  })])]);
+}];
 render._withStripped = true;
 
 
