@@ -2098,6 +2098,9 @@ __webpack_require__.r(__webpack_exports__);
           _this.userName = '';
           _this.userEmail = '';
           _this.userMessage = '';
+        } else {
+          // se response.data.success è falsa allora this.errors sarà uguale a response.data.success
+          _this.errors = response.data.success;
         }
       });
     }

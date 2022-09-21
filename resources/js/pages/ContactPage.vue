@@ -71,6 +71,9 @@ export default {
                     this.userName = '';
 			        this.userEmail = '';
 			        this.userMessage = '';
+                }else{
+                    // se response.data.success è falsa allora this.errors sarà uguale a response.data.success
+                    this.errors = response.data.success
                 }
             })
 
