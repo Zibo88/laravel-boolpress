@@ -4,6 +4,10 @@
         <!-- inserisco form per l'invio di un messaggio, dalla parte front-office all'admin -->
         <!-- aggiunta di @submit.prevent al tag form per richiamare la funzione sendMessage quando l'utente invia i dati del form  -->
         <form class="mt-3" @submit.prevent="sendMessage">
+            <!-- inserisco un alert da BS5 per ringraziare l'utente del messaggio inviato -->
+            <div class="alert alert-primary" role="alert">
+                Grazie per averci contattato
+            </div>
 
             <!-- nome -->
 			 <div class="mb-3">

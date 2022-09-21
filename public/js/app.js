@@ -2474,6 +2474,11 @@ var render = function render() {
       }
     }
   }, [_c("div", {
+    staticClass: "alert alert-primary",
+    attrs: {
+      role: "alert"
+    }
+  }, [_vm._v("\n                Grazie per averci contattato\n            ")]), _vm._v(" "), _c("div", {
     staticClass: "mb-3"
   }, [_c("label", {
     staticClass: "form-label",
