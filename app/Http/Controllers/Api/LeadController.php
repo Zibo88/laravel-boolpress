@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Lead;
 // importo la classe validator per la validazione
 use Illuminate\Support\Facades\Validator;
+// importo la Facades Mail
+use Illuminate\Support\Facades\Mail;
 
 class LeadController extends Controller
 {   
