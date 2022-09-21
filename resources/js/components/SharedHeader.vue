@@ -24,7 +24,7 @@ export default {
     name: 'SharedHeader',
     data(){
         return{
-            // creo un array di oggeti per i link di navigazione così da poterli stampare tramite un v-for, inserisco in ogni oggetto le caratteristiche così da poter stampare quello che mi serve
+            // creo un array di oggeti per i link di navigazione così da poterli stampare tramite un v-for, inserisco in ogni oggetto la label così da poter stampare quello che mi serve e il name che rappresenta la route che deve prendere quel link
             menuLinks: [
                 {
                     name: 'home',
@@ -37,6 +37,10 @@ export default {
                 {
                     name: 'blog',
                     label:'Blog'
+                },
+                {
+                    name: 'contact',
+                    label: 'Contattaci'
                 },
             ]
         }
