@@ -24,6 +24,16 @@ class LeadController extends Controller
             'message' => 'required | max:60000',
         ]);
 
+        // Nel caso in cui la validazione fallisca
+        if($validator->fails()) {
+            // ritornerà un file json in cui success => false, 
+            return response()->json([
+                'success' => false,
+                // errors sarà un array con tutti gli errori
+                'errors' => $validator->errors()
+            ]);
+        }
+
     //    assegno una nuova istanza di Lead a $new_lead
        $new_lead = new Lead();
         // eseguo il mass-assigment
