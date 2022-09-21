@@ -56,7 +56,7 @@
                 </div>
             </div>
 			
-            <input type="submit" value="Invia" :disabled="sending"> 
+            <input type="submit" class="btn btn-primary" value="Invia" :disabled="sending"> 
 		</form>
 
     </div>
@@ -82,7 +82,7 @@ export default {
         // creo una funzione dentro methods per eseguire la chiamata Axios
         sendMessage(){
             // se l'utente invia il form sending diventa vera
-                this.sending = true
+                this.sending = true;
             // eseguo la chiamata axios
             axios.post('/api/leads',{
                 // passo alla chiamata i parametri sotto forma di oggetto
@@ -106,7 +106,7 @@ export default {
                     this.errors = response.data.errors
                 }
                 // al termine della chiamata torna false
-                this.sending = false
+                this.sending = false;
 
             })
 

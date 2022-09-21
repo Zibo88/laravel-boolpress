@@ -2605,6 +2605,7 @@ var render = function render() {
       }
     }, [_vm._v("\n                        " + _vm._s(error) + "\n                    ")]);
   }), 0) : _vm._e()]), _vm._v(" "), _c("input", {
+    staticClass: "btn btn-primary",
     attrs: {
       type: "submit",
       value: "Invia",
