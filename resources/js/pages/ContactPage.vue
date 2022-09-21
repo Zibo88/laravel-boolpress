@@ -49,6 +49,8 @@ export default {
 			userEmail: '',
 			userMessage: '',
             success: false,
+            // creo una variabile per salvare gli errori e do come valore un oggetto vuoto
+            errors: {},
 		}
 	},
     methods: {

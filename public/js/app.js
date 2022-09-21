@@ -2075,7 +2075,9 @@ __webpack_require__.r(__webpack_exports__);
       userName: '',
       userEmail: '',
       userMessage: '',
-      success: false
+      success: false,
+      // creo una variabile per salvare gli errori e do come valore un oggetto vuoto
+      errors: {}
     };
   },
   methods: {
