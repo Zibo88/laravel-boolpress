@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 // importo il model
 use App\Lead;
+// importo la classe validator per la validazione
+use Illuminate\Support\Facades\Validator;
 
 class LeadController extends Controller
 {   
