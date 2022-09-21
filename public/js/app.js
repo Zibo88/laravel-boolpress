@@ -2601,7 +2601,8 @@ var render = function render() {
   }), 0) : _vm._e()]), _vm._v(" "), _c("input", {
     attrs: {
       type: "submit",
-      value: "Invia"
+      value: "Invia",
+      disabled: _vm.sending
     }
   })])]);
 };

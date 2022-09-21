@@ -3,7 +3,7 @@
         Form di contatto
         <!-- inserisco form per l'invio di un messaggio, dalla parte front-office all'admin -->
         <!-- aggiunta di @submit.prevent al tag form per richiamare la funzione sendMessage quando l'utente invia i dati del form  -->
-        <form class="mt-3" @submit.prevent="sendMessage">
+        <form class="mt-3" @submit.prevent="sendMessage" >
             <!-- inserisco un alert da BS5 per ringraziare l'utente del messaggio inviato -->
             <!-- per evitare che il messaggio sia sempre visibile aggiungo success: false a data() e lo stampo solo se la condizione è vera, attraverso un v-if-->
             <div v-if="success" class="alert alert-primary" role="alert">
@@ -56,7 +56,7 @@
                 </div>
             </div>
 			
-            <input type="submit" value="Invia"> 
+            <input type="submit" value="Invia" :disabled="sending"> 
 		</form>
 
     </div>
