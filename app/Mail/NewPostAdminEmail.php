@@ -35,6 +35,11 @@ class NewPostAdminEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.new-post-admin-email');
+        // per passare i dati alla view inseriamo utilizziamo i $data
+        $data = [
+            'new_post' => $this->$new_post
+        ];
+        // ed inseriamo $data nella view
+        return $this->view('emails.new-post-admin-email', $data);
     }
 }
