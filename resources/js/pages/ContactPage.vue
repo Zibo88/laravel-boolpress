@@ -1,19 +1,22 @@
 <template>
     <div class="container">
         Form di contatto
-        <!-- inserito form per l'invio di un messaggio, dalla parte front-office all'admin -->
+        <!-- inserisco form per l'invio di un messaggio, dalla parte front-office all'admin -->
         <form class="mt-3">
+
             <!-- nome -->
 			 <div class="mb-3">
                 <label for="user-name" class="form-label">Nome e Cognome</label>
                 <input type="text" class="form-control" id="user-name">
             </div>
 
+            <!-- email -->
             <div class="mb-3">
                 <label for="user-email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="user-email">
             </div>
 
+            <!-- messaggio -->
             <div class="mb-3">
                 <div>
                      <label for="user-message" class="form-label">Message</label>
@@ -31,5 +34,14 @@
 <script>
 export default {
     name:'ContactPage',
+    // creo delle variabili dentro data per poter leggere tramite v-model i contenuto della input
+    data() {
+		return {
+			userName: '',
+			userEmail: '',
+			userMessage: '',
+		}
+	}
+
 }
 </script>

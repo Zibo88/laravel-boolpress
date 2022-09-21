@@ -2068,7 +2068,15 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'ContactPage'
+  name: 'ContactPage',
+  // creo delle variabili dentro data per poter leggere tramite v-model i contenuto della input
+  data: function data() {
+    return {
+      userName: '',
+      userEmail: '',
+      userMessage: ''
+    };
+  }
 });
 
 /***/ }),
