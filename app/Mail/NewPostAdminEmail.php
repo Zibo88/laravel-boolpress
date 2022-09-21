@@ -16,9 +16,10 @@ class NewPostAdminEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    // richiamo $new_post nel construct così che sia disponibile al suo interno
+    public function __construct($_new_post)
     {
-        //
+        
     }
 
     /**
