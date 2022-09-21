@@ -2074,7 +2074,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       userName: '',
       userEmail: '',
-      userMessage: ''
+      userMessage: '',
+      success: false
     };
   },
   methods: {
