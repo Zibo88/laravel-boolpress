@@ -13,14 +13,19 @@ class LeadController extends Controller
     // per leggere i dati provenienti dal form inserisco Request $request in store(), dato che la chiamata è eseguita con metodo post posso vedere i risultati solo tramite postman
     public function store(Request $request){
     //    richiamo tutti i dati
-        $data = $request->all();
-        // dd($data);
-        // assegno a $new_lead una nuova istanza di Lead
-        $new_lead = new Lead();
-        // eseguo il mass-assignment tramite ->fill()
-		$new_lead->fill($data);
-
-
+       $data = $request->all();
+    //    assegno una nuova istanza di Lead a $new_lead
+       $new_lead = new Lead();
+        // eseguo il mass-assigment
+       $new_lead->fill($data);
+        // salvo
+       $new_lead->save();
+        // chiedo alla funzione di ritornare succes -> true se la chiamata è andata a buon fine
+       return response()->json([
+           'success' => true
+       ]);
+        
+       
     }
 
 }

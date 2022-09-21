@@ -2458,7 +2458,7 @@ var render = function render() {
   }, [_c("label", {
     staticClass: "form-label",
     attrs: {
-      "for": "userName"
+      "for": "user-name"
     }
   }, [_vm._v("Nome e Cognome")]), _vm._v(" "), _c("input", {
     directives: [{
@@ -2486,27 +2486,27 @@ var render = function render() {
   }, [_c("label", {
     staticClass: "form-label",
     attrs: {
-      "for": "usereMail"
+      "for": "usere-email"
     }
   }, [_vm._v("Email")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: _vm.userMail,
-      expression: "userMail"
+      value: _vm.userEmail,
+      expression: "userEmail"
     }],
     staticClass: "form-control",
     attrs: {
       type: "email",
-      id: "userEmail"
+      id: "user-email"
     },
     domProps: {
-      value: _vm.userMail
+      value: _vm.userEmail
     },
     on: {
       input: function input($event) {
         if ($event.target.composing) return;
-        _vm.userMail = $event.target.value;
+        _vm.userEmail = $event.target.value;
       }
     }
   })]), _vm._v(" "), _c("div", {
@@ -2519,7 +2519,7 @@ var render = function render() {
       expression: "userMessage"
     }],
     attrs: {
-      id: "userMessage",
+      id: "user-message",
       cols: "100",
       rows: "10"
     },
@@ -2547,7 +2547,7 @@ var staticRenderFns = [function () {
   return _c("div", [_c("label", {
     staticClass: "form-label",
     attrs: {
-      "for": "userMessage"
+      "for": "user-message"
     }
   }, [_vm._v("Message")])]);
 }];
