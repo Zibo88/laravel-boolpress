@@ -2449,13 +2449,6 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
-};
-
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
   return _c("div", {
     staticClass: "container"
   }, [_vm._v("\n        Form di contatto\n        "), _vm._v(" "), _c("form", {
@@ -2465,39 +2458,79 @@ var staticRenderFns = [function () {
   }, [_c("label", {
     staticClass: "form-label",
     attrs: {
-      "for": "user-name"
+      "for": "userName"
     }
   }, [_vm._v("Nome e Cognome")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.userName,
+      expression: "userName"
+    }],
     staticClass: "form-control",
     attrs: {
       type: "text",
-      id: "user-name"
+      id: "userName"
+    },
+    domProps: {
+      value: _vm.userName
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.userName = $event.target.value;
+      }
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "mb-3"
   }, [_c("label", {
     staticClass: "form-label",
     attrs: {
-      "for": "user-email"
+      "for": "usereMail"
     }
   }, [_vm._v("Email")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.userMail,
+      expression: "userMail"
+    }],
     staticClass: "form-control",
     attrs: {
       type: "email",
-      id: "user-email"
+      id: "userEmail"
+    },
+    domProps: {
+      value: _vm.userMail
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.userMail = $event.target.value;
+      }
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "mb-3"
-  }, [_c("div", [_c("label", {
-    staticClass: "form-label",
+  }, [_vm._m(0), _vm._v(" "), _c("textarea", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.userMessage,
+      expression: "userMessage"
+    }],
     attrs: {
-      "for": "user-message"
-    }
-  }, [_vm._v("Message")])]), _vm._v(" "), _c("textarea", {
-    attrs: {
-      id: "user-message",
+      id: "userMessage",
       cols: "100",
       rows: "10"
+    },
+    domProps: {
+      value: _vm.userMessage
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.userMessage = $event.target.value;
+      }
     }
   })]), _vm._v(" "), _c("input", {
     attrs: {
@@ -2505,6 +2538,18 @@ var staticRenderFns = [function () {
       value: "Invia"
     }
   })])]);
+};
+
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", [_c("label", {
+    staticClass: "form-label",
+    attrs: {
+      "for": "userMessage"
+    }
+  }, [_vm._v("Message")])]);
 }];
 render._withStripped = true;
 

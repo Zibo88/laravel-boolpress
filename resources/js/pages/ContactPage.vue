@@ -6,23 +6,25 @@
 
             <!-- nome -->
 			 <div class="mb-3">
-                <label for="user-name" class="form-label">Nome e Cognome</label>
-                <input type="text" class="form-control" id="user-name">
+                <label for="userName" class="form-label">Nome e Cognome</label>
+                <!-- inserisco il v-model nelle input -->
+                <input v-model="userName" type="text" class="form-control" id="userName">
             </div>
 
             <!-- email -->
             <div class="mb-3">
-                <label for="user-email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="user-email">
+                <label for="usereMail" class="form-label">Email</label>
+                <!-- inserisco il v-model nelle input -->
+                <input v-model="userMail" type="email" class="form-control" id="userEmail">
             </div>
 
             <!-- messaggio -->
             <div class="mb-3">
                 <div>
-                     <label for="user-message" class="form-label">Message</label>
+                     <label for="userMessage" class="form-label">Message</label>
                 </div>
-               
-                <textarea  id="user-message" cols="100" rows="10"></textarea>
+               <!-- inserisco il v-model nelle input -->
+                <textarea v-model="userMessage"  id="userMessage" cols="100" rows="10"></textarea>
             </div>
 			
             <input type="submit" value="Invia"> 
