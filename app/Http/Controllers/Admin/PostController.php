@@ -23,6 +23,11 @@ use App\Tag;
 // importo la classe Storage per il salvataggio delle immagini provenienti dal form in una cartella in locale
 use Illuminate\Support\Facades\Storage;
 
+//importo la classe mail
+use Illuminate\Support\Facades\Mail;
+
+
+
 
 class PostController extends Controller
 {
