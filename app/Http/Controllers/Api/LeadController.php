@@ -16,6 +16,14 @@ class LeadController extends Controller
     public function store(Request $request){
     //    richiamo tutti i dati
        $data = $request->all();
+
+        // utilizzo la classe validator assegnado come primo parametro idati provenienti dal dal form che sono racchiusi in $data e com secondo argomento le regole di validazione
+        $validator = Validator::make($data, [
+            'name' => 'required | max:255',
+            'email' => 'required | max:255',
+            'message' => 'required | max:60000',
+        ]);
+
     //    assegno una nuova istanza di Lead a $new_lead
        $new_lead = new Lead();
         // eseguo il mass-assigment
