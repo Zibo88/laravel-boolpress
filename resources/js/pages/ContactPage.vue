@@ -11,17 +11,32 @@
             </div>
 
             <!-- nome -->
-			 <div class="mb-3">
+			<div class="mb-3">
                 <label for="user-name" class="form-label">Nome e Cognome</label>
                 <!-- inserisco il v-model nelle input -->
                 <input v-model="userName" type="text" class="form-control" id="userName">
+
+                <!-- se errors.name esiste -->
+                <div v-if="errors.name">
+                        <!-- per ogni errore in errors.name stampa un errore -->
+                    <div v-for="error, index in errors.name" :key="index" class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                </div>
             </div>
 
             <!-- email -->
             <div class="mb-3">
-                <label for="usere-email" class="form-label">Email</label>
+                <label for="user-email" class="form-label">Email</label>
                 <!-- inserisco il v-model nelle input -->
                 <input v-model="userEmail" type="email" class="form-control" id="user-email">
+
+                 <!-- se errors.email esiste -->
+                <div v-if="errors.email">
+                    <div v-for="error, index in errors.email" :key="index" class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                </div>
             </div>
 
             <!-- messaggio -->
@@ -31,6 +46,14 @@
                 </div>
                <!-- inserisco il v-model nelle input -->
                 <textarea v-model="userMessage"  id="user-message" cols="100" rows="10"></textarea>
+
+                 <!-- se errors.message esiste -->
+                <div v-if="errors.message">
+                        <!-- per ogni errore in errors.name stampa un errore -->
+                    <div v-for="error, index in errors.message" :key="index" class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                </div>
             </div>
 			
             <input type="submit" value="Invia"> 
@@ -71,9 +94,10 @@ export default {
                     this.userName = '';
 			        this.userEmail = '';
 			        this.userMessage = '';
+                    this.errors = {};
                 }else{
                     // se response.data.success è falsa allora this.errors sarà uguale a response.data.success
-                    this.errors = response.data.success
+                    this.errors = response.data.errors
                 }
             })
 

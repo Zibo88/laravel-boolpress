@@ -2098,9 +2098,10 @@ __webpack_require__.r(__webpack_exports__);
           _this.userName = '';
           _this.userEmail = '';
           _this.userMessage = '';
+          _this.errors = {};
         } else {
           // se response.data.success è falsa allora this.errors sarà uguale a response.data.success
-          _this.errors = response.data.success;
+          _this.errors = response.data.errors;
         }
       });
     }
@@ -2520,12 +2521,20 @@ var render = function render() {
         _vm.userName = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _vm.errors.name ? _c("div", _vm._l(_vm.errors.name, function (error, index) {
+    return _c("div", {
+      key: index,
+      staticClass: "alert alert-danger",
+      attrs: {
+        role: "alert"
+      }
+    }, [_vm._v("\n                        " + _vm._s(error) + "\n                    ")]);
+  }), 0) : _vm._e()]), _vm._v(" "), _c("div", {
     staticClass: "mb-3"
   }, [_c("label", {
     staticClass: "form-label",
     attrs: {
-      "for": "usere-email"
+      "for": "user-email"
     }
   }, [_vm._v("Email")]), _vm._v(" "), _c("input", {
     directives: [{
@@ -2548,7 +2557,15 @@ var render = function render() {
         _vm.userEmail = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _vm.errors.email ? _c("div", _vm._l(_vm.errors.email, function (error, index) {
+    return _c("div", {
+      key: index,
+      staticClass: "alert alert-danger",
+      attrs: {
+        role: "alert"
+      }
+    }, [_vm._v("\n                        " + _vm._s(error) + "\n                    ")]);
+  }), 0) : _vm._e()]), _vm._v(" "), _c("div", {
     staticClass: "mb-3"
   }, [_vm._m(0), _vm._v(" "), _c("textarea", {
     directives: [{
@@ -2571,7 +2588,15 @@ var render = function render() {
         _vm.userMessage = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("input", {
+  }), _vm._v(" "), _vm.errors.message ? _c("div", _vm._l(_vm.errors.message, function (error, index) {
+    return _c("div", {
+      key: index,
+      staticClass: "alert alert-danger",
+      attrs: {
+        role: "alert"
+      }
+    }, [_vm._v("\n                        " + _vm._s(error) + "\n                    ")]);
+  }), 0) : _vm._e()]), _vm._v(" "), _c("input", {
     attrs: {
       type: "submit",
       value: "Invia"
