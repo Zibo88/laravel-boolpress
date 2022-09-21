@@ -26,6 +26,8 @@ use Illuminate\Support\Facades\Storage;
 //importo la classe mail
 use Illuminate\Support\Facades\Mail;
 
+//importo l'oggetto mail creato
+use App\Mail\NewPostAdminEmail;
 
 
 
