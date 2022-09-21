@@ -23,6 +23,8 @@ class NewPostAdminEmail extends Mailable
     // richiamo $new_post nel construct così che sia disponibile al suo interno
     public function __construct($_new_post)
     {
+        // richiamo e assegno il valore $_new_post alla proprietà
+        $this->$new_post = $_new_post;
         
     }
 
