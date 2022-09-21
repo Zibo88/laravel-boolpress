@@ -2076,6 +2076,20 @@ __webpack_require__.r(__webpack_exports__);
       userEmail: '',
       userMessage: ''
     };
+  },
+  methods: {
+    // creo una funzione dentro methods per eseguire la chiamata Axios
+    sendMessage: function sendMessage() {
+      // eseguo la chiamata axios
+      axios.post('/api/leads', {
+        // passo alla chiamata i parametri sotto forma di oggetto
+        name: this.userName,
+        email: this.userEmail,
+        message: this.userMessage
+      }).then(function (response) {
+        console.log(response);
+      });
+    }
   }
 });
 
