@@ -11,6 +11,7 @@ import AboutPage from './pages/AboutPage.vue';
 import BlogPage from './pages/BlogPage.vue';
 import NotFound from './pages/NotFound.vue';
 import SinglePost from './pages/SinglePost.vue';
+import ContactPage from './pages/ContactPage.vue';
 
 // Regole delle rotte
 const router = new VueRouter ({
