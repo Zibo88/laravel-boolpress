@@ -54076,6 +54076,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'single-post',
     component: _pages_SinglePost_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
+    path: '/contact',
+    name: 'contact',
+    component: _pages_ContactPage_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+  }, {
     path: '*/',
     name: 'not-found',
     component: _pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_5__["default"]

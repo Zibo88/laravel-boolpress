@@ -39,6 +39,11 @@ const router = new VueRouter ({
             component: SinglePost
         },
         {
+            path: '/contact',
+            name: 'contact',
+            component: ContactPage
+        },
+        {
             path : '*/',
             name: 'not-found',
             component: NotFound
