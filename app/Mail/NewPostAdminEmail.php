@@ -24,7 +24,7 @@ class NewPostAdminEmail extends Mailable
     public function __construct($_new_post)
     {
         // richiamo e assegno il valore $_new_post alla proprietà
-        $this->$new_post = $_new_post;
+        $this->new_post = $_new_post;
         
     }
 
@@ -37,7 +37,7 @@ class NewPostAdminEmail extends Mailable
     {
         // per passare i dati alla view inseriamo utilizziamo i $data
         $data = [
-            'new_post' => $this->$new_post
+            'new_post' => $this->new_post
         ];
         // ed inseriamo $data nella view
         return $this->view('emails.new-post-admin-email', $data);
