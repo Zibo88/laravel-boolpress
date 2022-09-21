@@ -44,6 +44,10 @@ class LeadController extends Controller
        $new_lead->fill($data);
         // salvo
        $new_lead->save();
+
+        // invio la mail all'utente, l'indirizzo a cui inviare la mail lo troviamo dentro $data nella chiave email. Inviamo quindi un'istanza della classe ContactThankyouEmail che mostrerà la sua view 
+        Mail::to($data['email'])->send(new ContactThankyouEmail());
+
         // chiedo alla funzione di ritornare succes -> true se la chiamata è andata a buon fine
        return response()->json([
            'success' => true
