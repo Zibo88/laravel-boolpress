@@ -81,6 +81,8 @@ export default {
     methods: {
         // creo una funzione dentro methods per eseguire la chiamata Axios
         sendMessage(){
+            // se l'utente invia il form sending diventa vera
+                this.sending = true
             // eseguo la chiamata axios
             axios.post('/api/leads',{
                 // passo alla chiamata i parametri sotto forma di oggetto
@@ -97,10 +99,14 @@ export default {
 			        this.userEmail = '';
 			        this.userMessage = '';
                     this.errors = {};
+                    
                 }else{
                     // se response.data.success è falsa allora this.errors sarà uguale a response.data.success
                     this.errors = response.data.errors
                 }
+
+                
+
             })
 
         }

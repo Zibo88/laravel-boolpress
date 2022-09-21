@@ -2087,7 +2087,9 @@ __webpack_require__.r(__webpack_exports__);
     sendMessage: function sendMessage() {
       var _this = this;
 
-      // eseguo la chiamata axios
+      // se l'utente invia il form sending diventa vera
+      this.sending = true; // eseguo la chiamata axios
+
       axios.post('/api/leads', {
         // passo alla chiamata i parametri sotto forma di oggetto
         name: this.userName,
