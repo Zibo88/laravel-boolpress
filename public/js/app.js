@@ -2076,6 +2076,8 @@ __webpack_require__.r(__webpack_exports__);
       userEmail: '',
       userMessage: '',
       success: false,
+      // creo una variabile che setto su false, questa variabile indica quando l'utente ha inviato il form, ci permetterà di disabilitare il tasto submit se il form è giastato inviato
+      sending: false,
       // creo una variabile per salvare gli errori e do come valore un oggetto vuoto
       errors: {}
     };
