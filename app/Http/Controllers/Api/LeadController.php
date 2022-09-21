@@ -10,6 +10,8 @@ use App\Lead;
 use Illuminate\Support\Facades\Validator;
 // importo la Facades Mail
 use Illuminate\Support\Facades\Mail;
+// importo la classe mail creata per inviare la mail all'utente
+use App\Mail\ContactThankyouEmail;
 
 class LeadController extends Controller
 {   
