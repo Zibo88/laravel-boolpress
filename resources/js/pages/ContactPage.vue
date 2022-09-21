@@ -2,7 +2,8 @@
     <div class="container">
         Form di contatto
         <!-- inserisco form per l'invio di un messaggio, dalla parte front-office all'admin -->
-        <form class="mt-3">
+        <!-- aggiunta di @submit.prevent al tag form per richiamare la funzione sendMessage quando l'utente invia i dati del form  -->
+        <form class="mt-3" @submit.prevent="sendMessage">
 
             <!-- nome -->
 			 <div class="mb-3">

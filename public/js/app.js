@@ -2466,7 +2466,13 @@ var render = function render() {
   return _c("div", {
     staticClass: "container"
   }, [_vm._v("\n        Form di contatto\n        "), _vm._v(" "), _c("form", {
-    staticClass: "mt-3"
+    staticClass: "mt-3",
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.sendMessage.apply(null, arguments);
+      }
+    }
   }, [_c("div", {
     staticClass: "mb-3"
   }, [_c("label", {
