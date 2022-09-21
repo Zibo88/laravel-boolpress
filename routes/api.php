@@ -21,5 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // creo la route per per la visione di tutti i post con vuejs
 Route::get('/posts', 'Api\PostController@index');
 
-// creo la route per per la visione dei singoli post
+// creo la route per la visione dei singoli post
 Route::get('/posts/{slug}', 'Api\PostController@show');
+
+// creo una route per visualizzare la funzione store() di LeadController
+Route::post('/leads', 'Api\LeadController@store');
