@@ -114,6 +114,9 @@ class PostController extends Controller
         // salviamo il post
         $new_post->save();
 
+        // invio una mail quando un post viene creato
+        Mail::to('webadmin@internal.it')->send(new NewPostAdminEmail());
+
         // eseguo il salvaggio dei tag, solo se i dati del form relativi all'array tags sono settati
         if(isset($form_data['tags'])){
             $new_post->tags()->sync($form_data['tags']);
