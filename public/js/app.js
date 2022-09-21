@@ -2098,7 +2098,8 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         // se response.data.success è vera this.success diventa true e svuoto tutti i campi
         if (response.data.success) {
-          _this.success = true;
+          _this.success = true; // al termine della chiamata svuoto i campi
+
           _this.userName = '';
           _this.userEmail = '';
           _this.userMessage = '';
@@ -2106,7 +2107,10 @@ __webpack_require__.r(__webpack_exports__);
         } else {
           // se response.data.success è falsa allora this.errors sarà uguale a response.data.success
           _this.errors = response.data.errors;
-        }
+        } // al termine della chiamata torna false
+
+
+        _this.sending = false;
       });
     }
   }

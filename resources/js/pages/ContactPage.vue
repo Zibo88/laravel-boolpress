@@ -95,6 +95,7 @@ export default {
                 // se response.data.success è vera this.success diventa true e svuoto tutti i campi
                 if(response.data.success){
                     this.success = true;
+                    // al termine della chiamata svuoto i campi
                     this.userName = '';
 			        this.userEmail = '';
 			        this.userMessage = '';
@@ -104,8 +105,8 @@ export default {
                     // se response.data.success è falsa allora this.errors sarà uguale a response.data.success
                     this.errors = response.data.errors
                 }
-
-                
+                // al termine della chiamata torna false
+                this.sending = false
 
             })
 
