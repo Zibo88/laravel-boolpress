@@ -10,6 +10,10 @@ use Illuminate\Queue\SerializesModels;
 class NewPostAdminEmail extends Mailable
 {
     use Queueable, SerializesModels;
+    
+    // per rendere disponibile $new_post all'interno di build (quindi la view)
+    // creo una proprietà
+    private $new_post;
 
     /**
      * Create a new message instance.
