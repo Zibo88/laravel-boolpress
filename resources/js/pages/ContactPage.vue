@@ -5,8 +5,8 @@
         <!-- aggiunta di @submit.prevent al tag form per richiamare la funzione sendMessage quando l'utente invia i dati del form  -->
         <form class="mt-3" @submit.prevent="sendMessage">
             <!-- inserisco un alert da BS5 per ringraziare l'utente del messaggio inviato -->
-            <!-- per evitare che il messaggio sia sempre visibile aggiungo success: false a data()-->
-            <div class="alert alert-primary" role="alert">
+            <!-- per evitare che il messaggio sia sempre visibile aggiungo success: false a data() e lo stampo solo se la condizione è vera, attraverso un v-if-->
+            <div v-if="success" class="alert alert-primary" role="alert">
                 Grazie per averci contattato
             </div>
 
@@ -63,7 +63,13 @@ export default {
 
             })
             .then((response) => {
-                console.log(response);
+                // se response.data.success è vera this.success diventa true e svuoto tutti i campi
+                if(response.data.success){
+                    this.success = true;
+                    this.userName = '';
+			        this.userEmail = '';
+			        this.userMessage = '';
+                }
             })
 
         }

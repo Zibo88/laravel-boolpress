@@ -2081,6 +2081,8 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     // creo una funzione dentro methods per eseguire la chiamata Axios
     sendMessage: function sendMessage() {
+      var _this = this;
+
       // eseguo la chiamata axios
       axios.post('/api/leads', {
         // passo alla chiamata i parametri sotto forma di oggetto
@@ -2088,7 +2090,13 @@ __webpack_require__.r(__webpack_exports__);
         email: this.userEmail,
         message: this.userMessage
       }).then(function (response) {
-        console.log(response);
+        // se response.data.success è vera this.success diventa true e svuoto tutti i campi
+        if (response.data.success) {
+          _this.success = true;
+          _this.userName = '';
+          _this.userEmail = '';
+          _this.userMessage = '';
+        }
       });
     }
   }
@@ -2474,12 +2482,12 @@ var render = function render() {
         return _vm.sendMessage.apply(null, arguments);
       }
     }
-  }, [_c("div", {
+  }, [_vm.success ? _c("div", {
     staticClass: "alert alert-primary",
     attrs: {
       role: "alert"
     }
-  }, [_vm._v("\n                Grazie per averci contattato\n            ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                Grazie per averci contattato\n            ")]) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "mb-3"
   }, [_c("label", {
     staticClass: "form-label",
