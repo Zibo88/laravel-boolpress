@@ -257,7 +257,7 @@ class PostController extends Controller
 
         // se il post da cancellare ha una colonna cover popolata
         if($post_to_delete->cover){
-            // elimina dallo storage il la colonna cover collegata a quel post
+            // elimina dallo storage la colonna cover collegata a quel post
             Storage::delete($post_to_delete->cover);
         }
        
